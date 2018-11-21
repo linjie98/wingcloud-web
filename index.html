@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<link rel="stylesheet" href="css/bootstrap.css">-->
+    <!--<link rel="stylesheet" href="css/font-awesome.css">-->
+    <link rel="stylesheet" href="css/layui.css"  media="all">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <!--<script src="js/bootstrap.min.js"></script>-->
+
+
+
+</head>
+<body>
+<!--<div id="name"></div>-->
+<!--hello-->
+<!--<input type="button" value="logout" id="logout">-->
+<ul class="layui-nav">
+    <li class="layui-nav-item">
+        WingCloud
+    </li>
+    <li class="layui-nav-item">
+        <a href="">个人中心<span class="layui-badge-dot"></span></a>
+    </li>
+    <li class="layui-nav-item layui-layout-right" lay-unselect="">
+        <a href="javascript:;"><img src="//t.cn/RCzsdCq" class="layui-nav-img"><i id="name"></i></a>
+        <dl class="layui-nav-child">
+            <dd><a href="javascript:;">修改信息</a></dd>
+            <dd><a href="javascript:;">安全管理</a></dd>
+            <dd id="logout"><a href="javascript:;">退了</a></dd>
+        </dl>
+    </li>
+</ul>
+
+
+
+
+<script src="js/layui.js" charset="utf-8"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+
+
+<script>
+    //导航
+    layui.use('element', function(){
+        var element = layui.element; //导航的hover效果、二级菜单等功能，需要依赖element模块
+
+        //监听导航点击
+        element.on('nav(demo)', function(elem){
+            //console.log(elem)
+            layer.msg(elem.text());
+        });
+    });
+
+
+    window.onload = function () {
+        //var myname = $.cookie('myname'); // 读取 cookie
+
+        $.ajax({
+            xhrFields: {
+                withCredentials: true
+            },
+            url:"http://localhost:8080/api/user/getusermsg",//请求地址
+            data:{},//提交的数据
+            contentType:"application/text",
+            //contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            type:"post",//提交的方式
+            dataType:"json", //返回类型 TEXT字符串 JSON XML
+            // beforeSend: function(request) {
+            //     request.setRequestHeader("Authorization", MyLocalStorage.Cache.get('cookieKey'));
+            // },
+            success:function(data){
+                $("#name").html(data.user_name);
+            },
+            error:function(xhr, textStatus, errorThrown){
+                //请求失败
+                //通过状态码判断401
+                // alert(xhr.status)
+                // alert(xhr.readyState);
+                // alert(textStatus);
+                // if (xhr.status === 401) {
+                //     alert('身份验证已过期，请重新登陆.');
+                //     //返回首页
+                //     window.location.href = 'http://localhost:63342/test/index.html?_ijt=5s2aqchoafa7q5126joj5blfc8';
+                // }
+                alert(xhr.status+' '+xhr.readyState+' '+textStatus);
+            }
+        })
+    }
+
+    $("#logout").click(function(){
+        //alert(MyLocalStorage.Cache.get('cookieKey'))
+        //第一步：取数据,这里用到了用户名和密码
+
+        $.ajax({
+            xhrFields: {
+                withCredentials: true
+            },
+            url:"http://localhost:8080/api/user/logout",//请求地址
+            data:{},//提交的数据
+            contentType:"application/json",
+            //contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            type:"post",//提交的方式
+            dataType:"text", //返回类型 TEXT字符串 JSON XML
+            // beforeSend: function(request) {
+            //     request.setRequestHeader("Authorization", MyLocalStorage.Cache.get('cookieKey'));
+            // },
+            success:function(data){
+                alert(data)
+                window.location.href="login.html"
+            },
+            error:function(xhr, textStatus, errorThrown){
+                //请求失败
+                //通过状态码判断401
+                // alert(xhr.status)
+                // alert(xhr.readyState);
+                // alert(textStatus);
+                // if (xhr.status === 401) {
+                //     alert('身份验证已过期，请重新登陆.');
+                //     //返回首页
+                //     window.location.href = 'http://localhost:63342/test/index.html?_ijt=5s2aqchoafa7q5126joj5blfc8';
+                // }
+                alert(xhr.status+' '+xhr.readyState+' '+textStatus);
+            }
+        })
+
+    })
+
+
+</script>
+</body>
+</html>

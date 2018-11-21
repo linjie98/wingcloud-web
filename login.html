@@ -1,0 +1,309 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>无标题文档</title>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">-->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <style type="text/css">
+        .form-horizontal{
+            background: #fff;
+            padding-bottom: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .form-horizontal .heading{
+            display: block;
+            font-size: 35px;
+            font-weight: 700;
+            padding: 35px 0;
+            border-bottom: 1px solid #f0f0f0;
+            margin-bottom: 30px;
+        }
+        .form-horizontal .form-group{
+            padding: 0 40px;
+            margin: 0 0 25px 0;
+            position: relative;
+        }
+        .form-horizontal .form-control{
+            background: #f0f0f0;
+            border: none;
+            border-radius: 20px;
+            box-shadow: none;
+            padding: 0 20px 0 45px;
+            height: 40px;
+            transition: all 0.3s ease 0s;
+        }
+        .form-horizontal .form-control:focus{
+            background: #e0e0e0;
+            box-shadow: none;
+            outline: 0 none;
+        }
+        .form-horizontal .form-group i{
+            position: absolute;
+            top: 12px;
+            left: 60px;
+            font-size: 17px;
+            color: #c8c8c8;
+            transition : all 0.5s ease 0s;
+        }
+        .form-horizontal .form-control:focus + i{
+            color: #00b4ef;
+        }
+        .form-horizontal .fa-question-circle{
+            display: inline-block;
+            position: absolute;
+            top: 12px;
+            right: 60px;
+            font-size: 20px;
+            color: #808080;
+            transition: all 0.5s ease 0s;
+        }
+        .form-horizontal .fa-question-circle:hover{
+            color: #000;
+        }
+        .form-horizontal .main-checkbox{
+            float: left;
+            width: 20px;
+            height: 20px;
+            background: #11a3fc;
+            border-radius: 50%;
+            position: relative;
+            margin: 5px 0 0 5px;
+            border: 1px solid #11a3fc;
+        }
+        .form-horizontal .main-checkbox label{
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+        }
+        .form-horizontal .main-checkbox label:after{
+            content: "";
+            width: 10px;
+            height: 5px;
+            position: absolute;
+            top: 5px;
+            left: 4px;
+            border: 3px solid #fff;
+            border-top: none;
+            border-right: none;
+            background: transparent;
+            opacity: 0;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+        }
+        .form-horizontal .main-checkbox input[type=checkbox]{
+            visibility: hidden;
+        }
+        .form-horizontal .main-checkbox input[type=checkbox]:checked + label:after{
+            opacity: 1;
+        }
+        .form-horizontal .text{
+            float: left;
+            margin-left: 7px;
+            line-height: 20px;
+            padding-top: 5px;
+            text-transform: capitalize;
+        }
+        .form-horizontal .btn{
+            float: right;
+            font-size: 14px;
+            color: #fff;
+            background: #00b4ef;
+            border-radius: 30px;
+            padding: 10px 25px;
+            border: none;
+            text-transform: capitalize;
+            transition: all 0.5s ease 0s;
+        }
+        .btn{
+            width: 100%;
+        }
+        /*web background*/
+        .container{
+            display:table;
+            height:100%;
+        }
+
+        .row {
+            display: table-cell;
+        }
+        /* centered columns styles */
+        .row-centered {
+            text-align:center;
+        }
+        .col-centered {
+            display: inline-block;
+            float: none;
+            text-align: left;
+            margin-right: -4px;
+        }
+        @media only screen and (max-width: 479px){
+            .form-horizontal .form-group{
+                padding: 0 25px;
+            }
+            .form-horizontal .form-group i{
+                left: 45px;
+            }
+            .form-horizontal .btn{
+                padding: 10px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!--<h2>登录页面</h2>-->
+<!--<div>用户名：<input type="text" id="uid"/></div>-->
+<!--<div>密码：<input type="text" id="pwd"/></div>-->
+<!--<div>-->
+    <!--<input type="button" id="btn"value="登录"/>-->
+<!--</div>-->
+
+<div class="container">
+    <div class="row row-centered">
+        <div class="col-md-6 col-centered">
+            <form class="form-horizontal">
+                <span class="heading">WingCloud</span>
+                <div class="form-group">
+                    <input type="text" class="form-control" id="inputUsername3" placeholder="Username">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="form-group help">
+                    <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+                    <i class="fa fa-lock"></i>
+                    <a href="#" class="fa fa-question-circle"></a>
+                </div>
+                <div class="form-group">
+                    <!--<div class="main-checkbox">-->
+                        <!--<input type="checkbox" value="None" id="checkbox1" name="check"/>-->
+                        <!--<label for="checkbox1"></label>-->
+                    <!--</div>-->
+                    <!--<span class="text">Remember me</span>-->
+                    <input type="button" class="btn btn-default" id="login" value="登录"></input>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //定时 缓存
+    // var MyLocalStorage ={
+    //     Cache : {
+    //         /**
+    //          * 总容量5M
+    //          * 存入缓存，支持字符串类型、json对象的存储
+    //          * 页面关闭后依然有效 ie7+都有效
+    //          * @param key 缓存key
+    //          * @param stringVal
+    //          * @time 数字 缓存有效时间（秒） 默认60s
+    //          * 注：localStorage 方法存储的数据没有时间限制。第二天、第二周或下一年之后，数据依然可用。不能控制缓存时间，故此扩展
+    //          * */
+    //         put : function(key,stringVal,time){
+    //             try{
+    //                 if(!localStorage){return false;}
+    //                 if(!time || isNaN(time)){time=60;}
+    //                 var cacheExpireDate = (new Date()-1)+time*1000;
+    //                 var cacheVal = {val:stringVal,exp:cacheExpireDate};
+    //                 localStorage.setItem(key,JSON.stringify(cacheVal));//存入缓存值
+    //                 //console.log(key+":存入缓存，"+new Date(cacheExpireDate)+"到期");
+    //             }catch(e){}
+    //         },
+    //         /**获取缓存*/
+    //         get : function (key){
+    //             try{
+    //                 if(!localStorage){return false;}
+    //                 var cacheVal = localStorage.getItem(key);
+    //                 var result = JSON.parse(cacheVal);
+    //                 var now = new Date()-1;
+    //                 if(!result){return null;}//缓存不存在
+    //                 if(now>result.exp){//缓存过期
+    //                     this.remove(key);
+    //                     return "";
+    //                 }
+    //                 //console.log("get cache:"+key);
+    //                 return result.val;
+    //             }catch(e){
+    //                 this.remove(key);
+    //                 return null;
+    //             }
+    //         },/**移除缓存，一般情况不手动调用，缓存过期自动调用*/
+    //         remove : function(key){
+    //             if(!localStorage){return false;}
+    //             localStorage.removeItem(key);
+    //         },/**清空所有缓存*/
+    //         clear : function(){
+    //             if(!localStorage){return false;}
+    //             localStorage.clear();
+    //         }
+    //     }//end Cache
+    //}
+    var token=null;
+    $("#login").click(function(){
+        //alert(MyLocalStorage.Cache.get('cookieKey'))
+        //第一步：取数据,这里用到了用户名和密码
+        var uid=$("#inputUsername3").val();
+        var pwd=$("#inputPassword3").val();
+        if(uid==""||pwd==""){
+            alert("请勿传输空值!")
+            return false;
+        }
+        //alert(pwd);
+        //var token=null;
+        //$.cookie('mytoken', MyLocalStorage.Cache.get('cookieKey'), { expires: 7, path: '/' });
+        //第二步：验证数据，这里需要从数据库调数据，我们就用到了ajax
+        $.ajax({
+            xhrFields: {
+                withCredentials: true
+            },
+            url:"http://localhost:8080/api/user/login",//请求地址
+            data:JSON.stringify({"user_name":uid,"user_password":pwd}),//提交的数据
+            contentType:"application/json",
+            //contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            type:"post",//提交的方式
+            dataType:"json", //返回类型 TEXT字符串 JSON XML
+            // beforeSend: function(request) {
+            //     request.setRequestHeader("Authorization", MyLocalStorage.Cache.get('cookieKey'));
+            // },
+            success:function(data){
+                //alert(data.data['token']);
+                token = data.data['token'];
+                //自定义cookie过期时间，因为除了chrome外，其他浏览器不支持小数
+                // var date = new Date();
+                // date.setTime(date.getTime()+10*1000);//过期时间设置为10秒
+                //7天过期
+                $.cookie('mytoken', token, { expires: 7, path: '/' });
+                $.cookie('myname',uid,{ expires: 7,path:'/'});
+
+                //MyLocalStorage.Cache.put("cookieKey",token,60);//存储时间60秒
+                //console.log(data)
+                if (data.code==1) {
+                    window.location.href = "index.html"
+                }else if(data.code==0){
+                    alert("用户名或密码错误")
+                }
+            },
+            error:function(xhr, textStatus, errorThrown){
+                //请求失败
+                //通过状态码判断401
+                // alert(xhr.status)
+                // alert(xhr.readyState);
+                // alert(textStatus);
+                // if (xhr.status === 401) {
+                //     alert('身份验证已过期，请重新登陆.');
+                //     //返回首页
+                //     window.location.href = 'http://localhost:63342/test/index.html?_ijt=5s2aqchoafa7q5126joj5blfc8';
+                // }
+                alert(xhr.status+' '+xhr.readyState+' '+textStatus);
+            }
+        })
+
+    })
+</script>
+</body>
+</html>
