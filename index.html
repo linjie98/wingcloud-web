@@ -13,9 +13,10 @@
 
     <link rel="stylesheet" href="css/search.css"/>
     <style>
-        .navbar{
-            position: fixed;
-        }
+
+        /*.navbar{*/
+            /*position: fixed;*/
+        /*}*/
         .navbar-inverse {
             background-color: #393D49;
             border-color: #393D49;
@@ -24,6 +25,103 @@
             z-index: 2;
             margin-left: -1px;
             background: #fff;
+        }
+
+
+
+
+        [class*="icheck-"] {
+            min-height: 22px;
+            margin-top: 20px !important;
+            margin-bottom: 6px !important;
+            padding-left: 0px;
+        }
+
+
+
+
+        [class*="icheck-"] > label {
+            padding-left: 29px !important;
+            min-height: 22px;
+            line-height: 22px;
+            display: inline-block;
+            position: relative;
+            vertical-align: top;
+            margin-bottom: 0;
+            font-weight: normal;
+            cursor: pointer;
+        }
+
+        [class*="icheck-"] > input:first-child {
+            position: absolute !important;
+            opacity: 0;
+            margin: 0;
+        }
+
+
+
+        [class*="icheck-"] > input:first-child + label::before,
+        [class*="icheck-"] > input:first-child + input[type="hidden"] + label::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            border: 1px solid #D3CFC8;
+            border-radius: 0px;
+            margin-left: -29px;
+        }
+
+        [class*="icheck-"] > input:first-child:checked + label::after,
+        [class*="icheck-"] > input:first-child:checked + input[type="hidden"] + label::after {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 7px;
+            height: 10px;
+            border: solid 2px #fff;
+            border-left: none;
+            border-top: none;
+            transform: translate(7.75px, 4.5px) rotate(45deg);
+            -ms-transform: translate(7.75px, 4.5px) rotate(45deg);
+        }
+
+        [class*="icheck-"] > input[type="radio"]:first-child + label::before,
+        [class*="icheck-"] > input[type="radio"]:first-child + input[type="hidden"] + label::before {
+            border-radius: 50%;
+        }
+
+        [class*="icheck-"] > input:first-child:not(:checked):not(:disabled):hover + label::before,
+        [class*="icheck-"] > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+            border-width: 2px;
+        }
+
+        [class*="icheck-"] > input:first-child:disabled + label,
+        [class*="icheck-"] > input:first-child:disabled + input[type="hidden"] + label,
+        [class*="icheck-"] > input:first-child:disabled + label::before,
+        [class*="icheck-"] > input:first-child:disabled + input[type="hidden"] + label::before {
+            pointer-events: none;
+            cursor: default;
+            filter: alpha(opacity=65);
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            opacity: .65;
+        }
+        .icheck-asbestos > input:first-child:not(:checked):not(:disabled):hover + label::before,
+        .icheck-asbestos > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+            border-color: #7f8c8d;
+        }
+
+        .icheck-asbestos > input:first-child:checked + label::before,
+        .icheck-asbestos > input:first-child:checked + input[type="hidden"] + label::before {
+            background-color: #7f8c8d;
+            border-color: #7f8c8d;
+        }
+        .radio{
+            position: relative;
+            display: inline-block;
         }
 
     </style>
@@ -37,19 +135,12 @@
 
 </head>
 <body>
-<!--<div id="name"></div>-->
-<!--hello-->
-<!--<input type="button" value="logout" id="logout">-->
+
 <div class="total">
+    <!--header-->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">-->
-                    <!--<span class="sr-only">Toggle navigation</span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                    <!--<span class="icon-bar"></span>-->
-                <!--</button>-->
                 <a class="navbar-brand" href="#"><span><img src="images/logo.svg"></span></a>
                 <ul class="user-menu">
                     <li class="dropdown pull-right">
@@ -68,79 +159,129 @@
         </div><!-- /.container-fluid -->
     </nav>
 
-<!--<div class="layui-row layui-col-space3">-->
-    <!--<div class="layui-col-md1">-->
-        <!--&lt;!&ndash;<img src="img/itaem.png" height="30px" />&ndash;&gt;-->
-        <!--WingCloud-->
-    <!--</div>-->
-    <!--<div class="layui-col-md2">-->
-        <!--<input type="text" id="query" name="q" required lay-verify="required" placeholder="输入关键字" class="layui-input">-->
-    <!--</div>-->
-    <!--<div class="layui-col-md1">-->
-        <!--<button id="btn2" onclick="upd()" class="layui-btn"> 搜索  </button>-->
-    <!--</div>-->
-<!--</div>-->
-<!--&lt;!&ndash;横线&ndash;&gt;-->
-<!--<hr class="layui-bg-red">-->
 
-<!--&lt;!&ndash;搜索结果&ndash;&gt;-->
-<!--<div id="result">-->
-    <!--<hr class="layui-bg-gray">-->
-<!--</div>-->
-<!--<div id="page"></div>-->
+    <!--search-->
+    <div id="top-image">
+        <div id="content" class="container center-block">
+            <div class="jumbotron">
+                <div class="container col-sm-12 col-md-9">
+                    <h1>WingCloud</h1>
+                    <p>WingCloud分布式搜索引擎。</p>
+                    <div class="input-group input-group-lg">
+                            <div class="input-group-btn">
+                                <button type="button"class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="buttonText">搜索方式</span>
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                  <li><a href="#" id="categories" onclick="shows($(this).text())" data-toggle="modal" data-target="#myModal">类别</a></li>
+                                  <li><a href="#" id="keyvalue" onclick="shows($(this).text())">自定义</a></li>
+                                </ul>
+                            </div><!-- /btn-group -->
+                        <input type="text" id="search-input" class="form-control" placeholder="输入关键词" aria-describedby="sizing-addon1"/>
+                        <span class="input-group-btn">
+                             <button class="btn btn-default" type="button">搜 索</button>
+                        </span>
 
-<div id="top-image">
-    <div id="content" class="container center-block">
-        <div class="jumbotron">
-            <div class="container">
-                <h1>WingCloud</h1>
-                <p>WingCloud分布式搜索引擎。</p>
-                <div class="input-group input-group-lg">
-                    <!--<span class="input-group-addon" id="sizing-addon1">-->
-                        <!--<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>-->
-                        <div class="input-group-btn">
-                            <button type="button"class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="buttonText">搜索方式</span>
-                                <span class="caret"></span>
-                            </button>
-                            <ul class="dropdown-menu">
-                              <li><a href="#" onclick="shows($(this).text())">类别</a></li>
-                              <li><a href="#" onclick="shows($(this).text())">自定义</a></li>
-                            </ul>
-                        </div><!-- /btn-group -->
+                    </div>
 
-                    <!--</span>-->
-                    <input type="text" class="form-control" placeholder="输入关键词" aria-describedby="sizing-addon1"/>
-                    <span class="input-group-btn">
-                         <button class="btn btn-default" type="button">搜 索</button>
-                    </span>
+                    <div class="alert alert-success" id="keyvalue-id" role="alert" style="display: none">输入你要搜索的商品关键字哦</div>
                 </div>
-                <!--<div class="layui-input-inline">-->
-                 <!--<input type="text" name="title" required lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input">-->
-                <!--</div>-->
-                <!--<span class="layui-input-inline">-->
-                    <!--<button class="layui-btn layui-btn-primary layui-btn-lg">小型按钮</button>-->
-                <!--</span>-->
             </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">请选择类别！</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="radio icheck-asbestos">
+                        <input type="radio" checked id="asbestos1" name="asbestos" value="女装"/>
+                        <label for="asbestos1">女装</label>
+                    </div>
+                    <div class="radio icheck-asbestos">
+                        <input type="radio" id="asbestos2" name="asbestos" value="男装"/>
+                        <label for="asbestos2">男装</label>
+                    </div>
+                    <div class="radio icheck-asbestos">
+                        <input type="radio" id="asbestos3" name="asbestos" value="美妆"/>
+                        <label for="asbestos3">美妆</label>
+                    </div>
+                    <div class="radio icheck-asbestos">
+                        <input type="radio" id="asbestos4" name="asbestos" value="女鞋"/>
+                        <label for="asbestos4">女鞋</label>
+                    </div>
+                    <div class="radio icheck-asbestos">
+                        <input type="radio" id="asbestos5" name="asbestos" value="手机"/>
+                        <label for="asbestos5">手机</label>
+                    </div>
+                    <div class="radio icheck-asbestos">
+                        <input type="radio" id="asbestos6" name="asbestos" value="汽车"/>
+                        <label for="asbestos6">汽车</label>
+                    </div>
+                    <div class="radio icheck-asbestos">
+                        <input type="radio" id="asbestos7" name="asbestos" value="童装"/>
+                        <label for="asbestos7">童装</label>
+                    </div>
+                    <div class="radio icheck-asbestos">
+                        <input type="radio" id="asbestos8" name="asbestos" value="零食"/>
+                        <label for="asbestos8">零食</label>
+                    </div>
+                    <div class="radio icheck-asbestos">
+                        <input type="radio" id="asbestos9" name="asbestos" value="手表"/>
+                        <label for="asbestos9">手表</label>
+                    </div>
+                    <div class="radio icheck-asbestos">
+                        <input type="radio" id="asbestos10" name="asbestos" value="母婴"/>
+                        <label for="asbestos10">母婴</label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" id="btn-asbestos" class="btn btn-primary" data-dismiss="modal">保存</button>
+            </div>
+        </div>
     </div>
 </div>
-</div>
-</div>
-<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
-    <!--<script src="js/pop.min.js"></script>-->
 
-    <!--<script src="vendors/js/vendor.bundle.addons.js"></script>-->
-    <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <!-- End plugin js for this page-->
-    <!-- inject:js -->
-    <!--<script src="js2/template.js"></script>-->
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <!--<script src="js2/dashboard.js"></script>-->
-    <!--<script src="js2/todolist.js"></script>-->
 
 <script>
+
+
+    //点击模态框的保存按钮后将单选框内容添加到搜索表单中
+    $(document).ready(function () {
+        $("#btn-asbestos").click(function () {
+            $("#search-input").val($("input[name='asbestos']:checked").val())
+        })
+    })
+
+    //自定义提示信息的隐藏与显示
+    $(document).ready(function() {
+        $('#categories').click(function(){
+            if($("#keyvalue-id").css('display')=='block'){
+                $("#keyvalue-id").css("display","none");
+            }
+        })
+        $('#keyvalue').click(function(){
+            if($("#keyvalue-id").css('display')=='none'){
+                $("#keyvalue-id").css("display","block");
+            }
+        })
+    });
+
+    //搜索框的下拉按钮选择后显示出来
     function shows(a) {
         $('.buttonText').text(a)
     }
