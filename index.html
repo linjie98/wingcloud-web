@@ -146,12 +146,13 @@
                     <li class="dropdown pull-right">
                         <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> User <span class="caret"></span></a>-->
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <img class="img-circle" width="34" height="34" src="images/avatar-male.jpg" />John Smith<b class="caret"></b></a>
+                            <img class="img-circle" width="34" height="34" src="images/avatar-male.jpg" /><span id="name"></span><b class="caret"></b></a>
 
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                            <li><a href="test.html" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog"></span> help</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> <span id="logout">Logout</span></a></li>
                         </ul>
                     </li>
                 </ul>
@@ -166,7 +167,7 @@
             <div class="jumbotron">
                 <div class="container col-sm-12 col-md-9">
                     <h1>WingCloud</h1>
-                    <p>WingCloud分布式搜索引擎。</p>
+                    <p>WingCloud实时计算分析平台。</p>
                     <div class="input-group input-group-lg">
                             <div class="input-group-btn">
                                 <button type="button"class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -178,9 +179,9 @@
                                   <li><a href="#" id="keyvalue" onclick="shows($(this).text())">自定义</a></li>
                                 </ul>
                             </div><!-- /btn-group -->
-                        <input type="text" id="search-input" class="form-control" placeholder="输入关键词" aria-describedby="sizing-addon1"/>
+                        <input type="text" name="search-input" id="search-input" class="form-control" placeholder="输入关键词" aria-describedby="sizing-addon1"/>
                         <span class="input-group-btn">
-                             <button class="btn btn-default" type="button">搜 索</button>
+                             <button class="btn btn-default" type="button" id="search">搜 索</button>
                         </span>
 
                     </div>
@@ -288,7 +289,6 @@
 
 
     window.onload = function () {
-        //var myname = $.cookie('myname'); // 读取 cookie
 
         $.ajax({
             xhrFields: {
@@ -304,7 +304,11 @@
             //     request.setRequestHeader("Authorization", MyLocalStorage.Cache.get('cookieKey'));
             // },
             success:function(data){
+                if (data.user_name==null){
+                    window.location.href = 'http://localhost:63342/WingCloud_Web/login.html?_ijt=3gn91595nkcca2qoa0nvklio83';
+                }
                 $("#name").html(data.user_name);
+
             },
             error:function(xhr, textStatus, errorThrown){
                 //请求失败
@@ -318,6 +322,7 @@
                 //     window.location.href = 'http://localhost:63342/test/index.html?_ijt=5s2aqchoafa7q5126joj5blfc8';
                 // }
                 alert(xhr.status+' '+xhr.readyState+' '+textStatus);
+                window.location.href = 'http://localhost:63342/WingCloud_Web/login.html?_ijt=3gn91595nkcca2qoa0nvklio83';
             }
         })
     }
@@ -360,7 +365,37 @@
 
     })
 
+    /**
+     * 搜索请求
+     */
+    $("#search").click(function(){
+        //alert(MyLocalStorage.Cache.get('cookieKey'))
+        //第一步：取数据,这里用到了用户名和密码
+        var keyword = $(" input[ name='search-input' ] ").val()
+        alert(keyword)
+        $.ajax({
+            xhrFields: {
+                withCredentials: true
+            },
+            url:"http://localhost:8080/api/search/query"+"?keyword="+keyword,//请求地址
+            // data:{},//提交的数据
+            contentType:"application/json",
+            //contentType: "application/x-www-form-urlencoded; charset=utf-8",
+            type:"get",//提交的方式
+            dataType:"json", //返回类型 TEXT字符串 JSON XML
+            // beforeSend: function(request) {
+            //     request.setRequestHeader("Authorization", MyLocalStorage.Cache.get('cookieKey'));
+            // },
+            success:function(data){
+                alert(data)
+               // window.location.href="login.html"
+            },
+            error:function(xhr, textStatus, errorThrown){
+                alert(xhr.status+' '+xhr.readyState+' '+textStatus);
+            }
+        })
 
+    })
 
 
 
