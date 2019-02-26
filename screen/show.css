@@ -1,0 +1,37 @@
+@charset "UTF-8";
+/*.gird{*/
+    /*background-color:#eeeeee;*/
+    /*border: 1px solid #cccccc;*/
+    /*height: 100%;*/
+/*}*/
+.body{
+    /*设置背景图片，如果图片太小则no-repeat*/
+    background: url("../images/5c10d2ce6fe34.png") no-repeat;
+    /*设置背景图片宽和高都为100%*/
+    background-size: 100% 100%;
+    /*设置固定的背景图片，使图片不会随页面其余部分的滚动而移动*/
+    background-attachment: fixed;
+    /*修剪溢出的图片内容*/
+    overflow: hidden;
+}
+
+.container-fluid { /*流体布局要设置宽或高*/
+    height:100%;   /*使栅格布局中每一个已经布局好，并且指定大小的元素以其大小的100%显示在页面中*/
+    min-height:100%;   /*为了使布局中每一个元素可以完整显示，必须规定其大小不能小于它的100%*/
+}
+/*@media (min-width: 768px) {*/
+    /*.col-md-3 {*/
+        /*-webkit-box-flex: 0;*/
+        /*-ms-flex: 0 0 25%;*/
+        /*flex: 0 0 25%;*/
+        /*max-width: 25%;*/
+    /*}*/
+/*}*/
+    /*@media (min-width: 768px) {*/
+        /*.col-md-6 {*/
+            /*-webkit-box-flex: 0;*/
+            /*-ms-flex: 0 0 50%;*/
+            /*flex: 0 0 50%;*/
+            /*max-width: 50%;*/
+        /*}*/
+    /*}*/
