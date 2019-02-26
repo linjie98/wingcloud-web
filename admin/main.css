@@ -11,9 +11,23 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+
+
+.list-width{
+  /*display: block;*/
+  width: 100%;
+
+}
+.padding{
+  /*padding-top: 30px;*/
+ display: inline;
+  /*margin-top: 20px;*/
+
+}
 .h3style1 {
   position: relative; /* Helps us control overlap */
-  padding-left: 30px; /* Creates space for the Phone Icon */
+  padding-left: 35px; /* Creates space for the Phone Icon */
+  /*display: inline;*/
 }
 
 .h3style1:after {
@@ -22,6 +36,7 @@
   position: absolute;
   left: 0; /* Adjust as needed */
   top: 3px; /* Adjust as needed */
+  /*display: inline;*/
 }
 .h3style2 {
   position: relative; /* Helps us control overlap */
@@ -2023,10 +2038,16 @@ pre code {
 .table-responsive > .table-bordered {
   border: 0;
 }
-
-.form-control {
+/*@media (min-width: 450px){*/
+  /*.form-control{*/
+    /*width: 60%;*/
+  /*}*/
+/*}*/
+.form-control {      //选择框下拉框的长度，边框等样式设置
   display: block;
-  width: 100%;
+  width:90%;
+  /*width: 450px;*/
+  /*width: auto;*/
   padding: 0.375rem 0.75rem;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -2040,6 +2061,8 @@ pre code {
   -o-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  margin-left: 5%;
+  /*margin: auto ;*/
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
@@ -14215,18 +14238,27 @@ be a descendant of the grid when it is being dragged.
     margin-top: 10px;
   }
 }
+@media(min-width:330px) {
+  .tile{
+    height: 406px;
+  }
+}
 
 .tile {
+  display: block;
   position: relative;
+  /*position: absolute;*/
   background: #ffffff;
   border-radius: 3px;
   padding: 20px;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  margin-bottom: 30px;
+  margin-bottom: 70px;
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  /*height:406px;*/
+  /*height: 100%;*/
 }
 
 @media print {
@@ -14273,7 +14305,12 @@ be a descendant of the grid when it is being dragged.
   margin-bottom: 20px;
   font-size: 1.5rem;
 }
+@media (max-width: 450px) {
+  .tile-title-w-btn{
 
+  }
+
+}
 .tile .tile-title-w-btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -14284,7 +14321,12 @@ be a descendant of the grid when it is being dragged.
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
+  position: absolute;
+  /*position: relative;*/
+  /*bottom:70%;*/
+  right:5%;
+  /*margin:20px 1000px 10px 0px;*/
 }
 
 .tile .tile-title-w-btn p {
