@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+.body{
+    background: url("../images/wc_bg.png") no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.container-fluid {
+    height:100%;
+    min-height:100%;
+}
