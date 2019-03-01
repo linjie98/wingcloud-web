@@ -1,21 +1,18 @@
 @charset "UTF-8";
+/*设置p,ul,li的内外边距都为0*/
 p,ul,li{
     margin: 0;
     padding: 0;
 }
+
 .body{
+    width: 100%;
+    height: 100%;
+    min-height: 570px;
     background: url("../images/wc_bg.png") no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
     overflow: hidden;
-}
-.container-fluid {
-    height:100%;
-    min-height:100%;
-}
-.fill-hight{
-    height: 100%;
-    min-height: 100%;
 }
 .wrapper {
     position:absolute;
@@ -25,28 +22,31 @@ p,ul,li{
     left:0;
     right:0;
 }
-.layout{
-height: 60%;
+.container-fluid {
+    height:100%;
+    min-height:100%;
 }
-.h_content_left_top2{
-    margin-left: 145px;
+.fill-hight{
+    height: 100%;
+    min-height: 100%;
 }
-.h_content_left_top1_div1 P:nth-child(1){
+.message{
+    margin-top: 60%;
+}
+.p{
+    font-family: "微软雅黑";
+    font-size: 18px;
+    color: #fff;
+    text-align: center;
+}
+.left-float{
+    float: left;
+}
+.p1{
     font-family: "微软雅黑";
     font-size: 14px;
     color: #fff;
-}
-.h_content_left{
-    float: left;
-}
-.h_content_left_top2bg{
-    /*background: url(../images/wc_hbg.png);*/
-    width: 355px;
-    height: 200px;
-    color:#fff ;
-}
-ul,li{
-    list-style: none
+    text-align: center;
 }
 .scroll {
     height:155px;
@@ -55,58 +55,40 @@ ul,li{
     overflow:hidden;
     color: #fff;
 }
-.scroll ul {
-    width:100%;
-    position:relative;
+.list-inline{
+    display: inline;
 }
-.scroll span {
-    font-size:20px;
-    height:30px;
-}
-.h_content_left_top2c1 ul li{
-    height: 32px;
-    text-align: center;
-    font-size: 12px;
-
-}
-.h_content_left_top2c2{
+.caption{
     float: left;
     font-size: 12px;
     width: 120px;
 }
-.h_content_left_top2c1{
-    float: left;
-    font-size: 12px;
-    width: 180px;
-    margin-left: 40px;
-}
-.h_content_left_top2c1 p{
-    margin-top: 15px;
+.p2{
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #fff;
     text-align: center;
-    font-size: 12px;
-    margin-bottom: 15px;
 }
-.h_content_left_top2c2 p{
-    margin-top: 15px;
+.scroll-1{
+    height:155px;
+    width:100%;
+    max-width:640px;
+    overflow:hidden;
+    color: #fff;
+    /*margin-left:5%;*/
     text-align: center;
-    font-size: 12px;
-    margin-bottom: 15px;
 }
-.h_content_left_top2c2 ul li{
+.layout{
+height: 45%;
+    /*margin-top: 50%*/
+}
+
+
+ul,li{
+    list-style: none;
     height: 32px;
     text-align: center;
+    margin-left:0;
     font-size: 12px;
+}
 
-}
-li{
-    list-style:none;
-}
-.h_content_left_top1_div1,.h_content_left_top1_div2 {
-    float: left;
-}
-.h_content_left_top1_div1{
-    margin-left: 145px;
-}
-.h_content_left_top1_div2{
-    margin-left: 160px;
-}
