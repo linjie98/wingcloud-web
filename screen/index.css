@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/*设置body样式，
+    背景图片*/
+.body1{
+    background: url("../images/wc_bg.png") no-repeat;
+    height: 100%;
+    width: 100%;
+    min-height: 635px;
+    background-size: 100% 100%;
+    /*background-position: center center;*/
+    background-attachment: fixed;
+}
+/*设置3:6:3栅格系统绝对定位，
+设置栅格的上、下、左、右的距离*/
+.wrapper{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+/*设置流体布局宽和高，
+为图表空出位置,并规定最小高度
+不能小于页面容器的100%*/
+.container-fluid{
+    height: 100%;
+    min-height: 100%;
+}
+
+/*设置栅格高度，
+使栅格铺满屏幕*/
+.fill-height{
+    height: 100%;
+    min-height: 100%;
+}
+/*布局边框样式*/
+.cells {
+    padding: 0px;
+    height: 100%;
+    min-height: 170px;
+    /*设置布局边框最小高度，防止响应式布局发生混乱*/
+    background: url("../images/panel.png") center no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+}
+/*设置三列栅格
+的左右内边距*/
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+/*设置商品热销榜单与顶部的距离*/
+.message{
+    margin-top: 40%;
+}
+/*设置商品热销榜单top5字样*/
+.p1{
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+/*设置ul,li滚动报表样式*/
+.scroll {
+    /*height:155px;*/
+    height: 160px;
+    width:100%;
+    max-width:640px;
+    overflow:hidden;
+    color: #fff;
+}
+/*设置ul,li的样式，
+去掉每一个信息前的点,
+以及字体样式*/
+ul,li{
+    list-style: none;
+    height: 32px;
+    text-align: center;
+    /*margin-left:0;*/
+    font-size: 12px;
+    margin: 0px;
+    padding: 0;
+}
+/*设置盛放男女比例扇形图的容器高度*/
+/*设置栅格高度*/
+.gird-height-1{
+    margin-top: 40px;
+    height: 43%;
+}
+/*设置盛放中国地图容器高度*/
+.gird-height-2{
+    /*margin-top: 30px;*/
+    height: 90%;
+}
