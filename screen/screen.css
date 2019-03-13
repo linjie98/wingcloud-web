@@ -1,0 +1,222 @@
+@charset "UTF-8";
+/*设置body样式，
+    背景图片*/
+/*header样式*/
+.header{
+    background: url("../images/header.png")0 0 / 100% 100% no-repeat;
+    height: 54px;
+    margin: 0 0px 0 -40px;
+}
+
+.body1{
+    background: url("../images/wc_bg.png") no-repeat;
+    height: 100%;
+    width: 100%;
+    min-height: 635px;
+    background-size: 100% 100%;
+    /*background-position: center center;*/
+    background-attachment: fixed;
+}
+/*设置3:6:3栅格系统绝对定位，
+设置栅格的上、下、左、右的距离*/
+.wrapper{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+/*设置流体布局宽和高，
+为图表空出位置,并规定最小高度
+不能小于页面容器的100%*/
+.container-fluid{
+    height: 100%;
+    min-height: 100%;
+}
+
+/*设置栅格高度，
+使栅格铺满屏幕*/
+.fill-height{
+    height: 100%;
+    min-height: 100%;
+}
+/*左上角边框样式*/
+.cells-1 {
+    padding: 30px 0 0 15px;
+    height: 100%;
+    min-height: 170px;
+    /*设置布局边框最小高度，防止响应式布局发生混乱*/
+    background: url("../images/wc_left_top.png") center no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+}
+.cells {
+    padding: 30px 0 0 15px;
+    height: 100%;
+    min-height: 170px;
+    /*设置布局边框最小高度，防止响应式布局发生混乱*/
+    background: url("../images/panel.png") center no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+}
+/*左下角边框样式*/
+.cells-2{
+    padding: 0px 0 30px 15px;
+    height: 100%;
+    min-height: 170px;
+    /*设置布局边框最小高度，防止响应式布局发生混乱*/
+    background: url("../images/wc_left_bottom.png") center no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+}
+/*右上角边框样式*/
+.cells-3{
+    padding: 30px 15px 0px 0px;
+    height: 100%;
+    min-height: 170px;
+    /*设置布局边框最小高度，防止响应式布局发生混乱*/
+    background: url("../images/wc_right_top.png") center no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+}
+/*右下角边框样式*/
+.cells-4{
+    padding: 0px 15px 30px 35px;
+    height: 100%;
+    min-height: 170px;
+    /*设置布局边框最小高度，防止响应式布局发生混乱*/
+    background: url("../images/wc_right_bottom.png") center no-repeat;
+    background-size: 100% 100%;
+    box-sizing: border-box;
+}
+/*设置三列栅格
+的左右内边距*/
+.row{
+    margin-left: -8px;
+    margin-right: -8px;
+}
+/*设置商品热销榜单与顶部的距离*/
+.message{
+    /*高度距离太大响应式会与地图上方栅格重叠*/
+    margin-top: 30%;
+}
+/*设置滚动消息列表与热销商品top5字样的距离*/
+.destance{
+    margin-top: 8px;
+}
+/*设置商品热销榜单top5字体样式*/
+.p{
+    font-family: "微软雅黑";
+    font-size: 20px;
+    color: #FF8C00;
+    margin: 0 0 15px 10px;
+    /*text-align: center;*/
+}
+/*设置商品ID,订单量，商品名称的字样*/
+.p1{
+    font-family: "微软雅黑";
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+}
+/*设置ul,li滚动报表样式*/
+/*.scroll {*/
+    /*!*margin-left: 5px;*!*/
+    /*height:160px;*/
+    /*!*height: 140px;*!*/
+    /*!*height: 200%;*!*/
+    /*width:100%;*/
+    /*max-width:640px;*/
+    /*overflow:hidden;*/
+    /*color: #fff;*/
+/*}*/
+/*设置ul,li的样式，
+去掉每一个信息前的点,
+以及字体样式*/
+/*ul,li{*/
+    /*list-style: none;*/
+    /*height: 32px;*/
+    /*text-align: center;*/
+    /*!*margin-left:0;*!*/
+    /*font-size: 12px;*/
+    /*margin: 0px;*/
+    /*padding: 0;*/
+/*}*/
+/*设置盛放男女比例扇形图的容器高度*/
+/*设置栅格高度*/
+.gird-height-1{
+    margin-top: 10px;
+    /*margin-top: 105px;*/
+    height: 30%;
+}
+/*设置中国地图上方留白栅格高度*/
+.gird-height-6{
+    margin-top: 25%;
+}
+/*设置盛放中国地图容器高度*/
+.gird-height-2{
+    /*margin-top: 80px;*/
+    height: 70%;
+    width: 100%;
+}
+/*设置折线图上方，留白的栅格高度，距离顶部40%*/
+.gird-height-5{
+    /*height: 15%;*/
+    margin-top: 30%;
+}
+/*设置店铺订单总销售额折线图容器高度*/
+.gird-height-3{
+    /*margin-top: 10%;*/
+    height: 40%;
+}
+/*设置词云图容器高度*/
+.gird-height-4{
+    margin-top: 10px;
+    height: 30%;
+    /*bottom: 0;*/
+    /*margin-bottom: 0;*/
+}
+
+.gird-height-6{
+    /*height: 15%;*/
+    margin-top: 45%;
+}
+/*设置销售总金额字体颜色样式*/
+.span1{
+    margin-top: 40px;
+    font-size: 20px;
+    color: #eeeeee;
+    /*color: #cccccc;*/
+}
+/*设置金额数样式*/
+.p2{
+    /*color: #FF5722;*/
+    color: #FF8C00;
+   font-size: 70px;
+    font-weight:bold;
+
+}
+/*设置元字样式*/
+.span2{
+    font-size: 20px;
+    margin-left: 5px;
+    color: #cccccc;
+}
+*{ margin:0px; padding:0px; font-family:'微软雅黑'; -webkit-tap-highlight-color:rgba(0,0,0,0);  }
+li{ list-style:none }
+.topRec_List dl,.maquee{ width:90%; overflow:hidden; margin:0 auto; color:#7C7C7C}
+.topRec_List dd{ float:left; text-align:center; border-bottom:1px solid #1B96EE;color:#1B96EE;}
+.topRec_List dl dd:nth-child(1){ width:30%; height:40px; line-height:40px; }
+.topRec_List dl dd:nth-child(2){ width:30%; height:40px; line-height:40px; }
+.topRec_List dl dd:nth-child(3){ width:30%; height:40px; line-height:40px; }
+.topRec_List dl dd:nth-child(4){ width:30%; height:40px; line-height:40px; }
+.maquee{ height:195px;}
+.topRec_List ul{ width:100%; height:195px;}
+.topRec_List li{ width:100%; height:38px; line-height:38px; text-align:center; font-size:12px; }
+/*.topRec_List li:nth-child(2n){ background:#077cd0}*/
+.topRec_List li div{ float:left;}
+.topRec_List li div:nth-child(1){ width:30%;}
+.topRec_List li div:nth-child(2){ width:30%;}
+.topRec_List li div:nth-child(3){ width:30%;}
+.topRec_List li div:nth-child(4){ width:30%;}
+
