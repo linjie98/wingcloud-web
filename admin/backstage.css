@@ -1,0 +1,273 @@
+/* GLOBAL STYLES */
+	
+	/* typography */
+	/*body {*/
+		/*font-family: 'Roboto', sans-serif;*/
+		/*font-weight: 400;*/
+		/*background-color: #fff;*/
+	/*}*/
+	
+	h1 {
+		margin-top: 40px;
+		font-family: 'Caveat Brush', cursive;
+		font-size: 70px;
+		text-align: center;
+	}
+	
+	h2 {
+		margin-bottom: 25px;
+		max-width: 80%;
+		font-size: 32px;
+		font-weight: 500;
+	}
+	
+	/* Aligning */
+	.left {
+		text-align: left;
+	}
+	
+	.right {
+		text-align: right;
+	}
+	
+	.center {
+		text-align: center;
+	}
+	
+	/*!* Links *!*/
+	/*a {*/
+		/**/
+	/*}*/
+	
+	/* Carousel */
+/*设置模块内边距，使布局合理*/
+	.carousel-example {
+		padding: 20px 0px 50px 0;
+	}
+	
+	/*#complicated-content-carousel .carousel-control {*/
+		/*position: absolute;*/
+		/*top: -20px;*/
+		/*right: 0;*/
+		/*left: auto;*/
+		/*bottom: auto;*/
+		/*width: 14px;*/
+		/*font-size: 25px;*/
+		/*color: #3c3c3c !important;*/
+		/*opacity: 1;*/
+	/*}*/
+	
+	/*#complicated-content-carousel .carousel-control.left,*/
+	/*#complicated-content-carousel .carousel-control.right {*/
+		/*background-image: none;*/
+	/*}*/
+	
+	/*#complicated-content-carousel .carousel-control.left {*/
+		/*right: 35px;*/
+	/*}*/
+	
+	/*#complicated-content-carousel .index {*/
+		/*position: absolute;*/
+		/*top: -70px;*/
+		/*right: 0;*/
+		/*font-size: 16px;*/
+		/*color: #3c3c3c;*/
+	/*}*/
+	/*设置模块高度，样式，背景颜色等*/
+	#complicated-content-carousel .flex-item {
+		position: relative;
+		display: inline-block;
+		width: 250px;
+		/*height: 380px;*/
+		height: 180px;
+		padding: 16px 13px;
+		background-color: #f5f6f7;
+		border: 6px solid #f5f6f7;
+	}
+	/*选择鼠标浮动在整个模块上的边框样式和颜色*/
+	#complicated-content-carousel .flex-item:hover
+	/*#complicated-content-carousel .flex-item:focus */
+	{
+		border: 6px solid #d2d4d5;
+		/*border: 6px #31b0d5 solid;*/
+		border-radius: 3px;
+	}
+/*#complicated-content-carousel .flex-item:focus{*/
+	/*border: 6px solid #31b0d5;*/
+	/*border-radius: 6px;*/
+/*}*/
+/*设置下拉选择框标题高度*/
+.good-top {
+		height: 21px;
+		/*height: 10px;*/
+	}
+/*设置下拉选择框标题文字样式等*/
+	.good-top-left {
+		font-size: 16px;
+		color: #424242;
+		text-transform: uppercase;
+		line-height: 21px;
+	}
+/*设置颜色选择框高度*/
+	.good-top-right {
+		height: 21px;
+		text-align: right;
+	}
+	/*颜色修改功能样式容器高度等设置*/
+	.choose-color div {
+		display: inline-block;
+		width: 21px;
+		height: 21px;
+		border-radius: 50%;
+		letter-spacing: 5px;
+		cursor: pointer;
+	}
+	
+	.choose-color .blue {
+		background-color: #165eb9;
+	}
+	
+	.choose-color .yellow {
+		background-color: #ffe637;
+	}
+	
+	.choose-color .green {
+		background-color: lime;
+	}
+	
+	.choose-color .grey {
+		background-color: #d3a7ac;
+	}
+	
+	.choose-color .dark-blue {
+		background-color: #35374c;
+	}
+	
+	.choose-color .dark-blue-women {
+		background-color: #192b5e;
+	}
+	
+	.choose-color .light-blue-women {
+		background-color: #1682c4;
+	}
+	/*设置下拉选择框高度和字体大小*/
+	.good-top-left .fa {
+		position: relative;
+		top: 2px;
+		font-size: 21px;
+	}
+	
+	.good-bottom {
+		 height: 21px;
+	 }
+
+.good-bottom * {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+	
+	.good-bottom-left a h4 {
+		font-size: 18px;
+		color: #3c3c3c;
+		text-transform: uppercase;
+		line-height: 21px;
+	}
+	
+	.good-bottom-right {
+		position: relative;
+		top: -1px;
+		font-size: 22px;
+		color: #424242;
+		text-transform: uppercase;
+		line-height: 21px;
+	}
+	
+	.good-top-left,
+	.good-bottom-left {
+		/*float: left;*/
+		text-align: left;
+	}
+	
+	.good-top-right,
+	.good-bottom-right {
+		/*float: right;*/
+		/*text-align: right;*/
+	}
+	/*设置图片高度和使图片居中*/
+	.good-image {
+		/*height: 294px;*/
+		height: 100px;
+		text-align: center;
+	}
+	/*在good-image之前设置图片样式*/
+	.good-image:before {
+		/*插入内容为空*/
+	    content: "";
+	    display: inline-block;
+	    height: 100%;
+	    vertical-align: middle;
+	}
+	/*设置图片的最大高度，不能比规定高度高*/
+	.good-image img {
+		max-height: 80px;
+		/*vertical-align: middle;*/
+	}
+	/*设置下拉选择框标题样式*/
+	.size {
+		position: absolute;
+		padding: 0;
+		cursor: pointer;
+		transition: all .35s;
+	}
+	/*设置下拉选择框边框背景颜色*/
+	.size.shown {
+		padding: 0 5px 5px 5px;
+		background-color: #fff;
+		border-radius: 2px;
+	}
+	
+	.size.shown .option:hover {
+		background-color: #f5f6f7;
+		/*background-color: #00FF00;*/
+	}
+	
+	.carousel-control {
+		width: 50px;
+		height: 50px;
+		top: 50%;
+		transform: translateY(-50%);
+		bottom: auto;
+		font-size: 30px;
+		text-align: center;
+		opacity: 1;
+	}
+	
+	a.carousel-control.left,
+	a.carousel-control.right {
+		background-image: none;
+		opacity: 1;
+		text-align: center;
+	}
+
+/* MEDIA QUERIES */
+	/* styles for phones' displays */
+	/*@media only screen and (max-width: 350px) {*/
+		/*#complicated-content-carousel .flex-item {*/
+			/*width: 300px;*/
+		/*}*/
+	/*}*/
+	
+	/*!* styles for medium size displays *!*/
+	/*@media only screen and (min-width: 992px) and (max-width: 1199px) {*/
+		/*#complicated-content-carousel .flex-item {*/
+			/*width: 300px;*/
+		/*}*/
+	/*}*/
+/*控制两个模块之间的距离*/
+.message{
+	margin-right: 20px ;
+	margin-left: 20px;
+}
+
+
+
