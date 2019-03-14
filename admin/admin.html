@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>WingCloud后台管理</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="awesome-bootstrap-checkbox.css">
+    <link rel="stylesheet" href="../css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="../css/toastr.css">
+
+
+
+</head>
+<body class="app sidebar-mini rtl">
+<!-- Navbar-->
+<header class="app-header"><a class="app-header__logo"href="../index.html" >WingCloud</a>
+    <a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+
+
+</header>
+<!--Sidebar menu 左边菜单栏-->
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar">
+    <div class="app-sidebar__user">
+        <img class="app-sidebar__user-avatar" width="34" height="34" src="../images/avatar-male.jpg" alt="admin">
+        <div>
+            <span id="name"></span>
+        </div>
+    </div>
+    <ul class="app-menu">
+        <li><a class="app-menu__item active" href="index.html"><i class="app-menu__icon fa fa-bar-chart"></i><span class="app-menu__label">图表修改</span></a></li>
+        <li class="treeview"><a class="app-menu__item" href="monitor.html"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">性能监控</span><i class="treeview-indicator"></i></a>
+
+    </ul>
+</aside>
+<!--操作管理界面-->
+<main class="app-content">
+    <div class="app-title">
+        <div>
+            <!--边框布局样式-->
+            <h1><i class="fa fa-bar-chart"></i>图表修改</h1>
+            <p>Welcome to the WingCloud</p>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+            <!--<p><a href="#" class="btn hint hint-bottom" data-hint="这个是菜单2"><span>_</span>这是什么</a></p>-->
+            <!--<button type="button" class="btn hint btn-success hint-bottom" data-hint="这个是菜单2"><span>_</span>成功按钮</button>-->
+            <!--<div>-->
+            <!--<li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>-->
+            <!--<li class="breadcrumb-item"><a href="#">图表修改</a></li>-->
+            <img src="../images/logo_black64.png">
+        </ul>
+    </div>
+    <section class="examples">
+        <div class="container">
+            <div id="complicated-content-carousel" class="carousel flexible slide" data-ride="carousel" data-interval="false" data-wrap="false">
+                <!--<div class="items">-->
+                <!--第一行改变折线图颜色，报表样式等，后台与数据大屏交互-->
+                <div class="row" >
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" >
+                        <div class="tile" id="line_color">
+                            <div class="flex-item">
+                                <div class="good-top">
+                                    <div class="good-top-left">
+                                        <div class="size">
+                                            <div class="header">
+                                                <span class="number">折线图（默认）</span>
+                                                <!--<span class="fa fa-angle-down"></span>-->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="good-top-right" >
+                                        <div class="choose-color">
+                                            <div class="line_blue"></div>
+                                            <div class="line_yellow"></div>
+                                            <div class="line_green"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="good-image">
+                                    <img src="../images/line_blue.png">
+                                </div>
+                                <div class="good-bottom" style="text-align: center">
+                                    <button type="button" class="btn btn-sm btn-success" onclick="myFunction('line_chart_one');button()" >确定</button>
+                                    <div class="alert"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tile">
+                            <div class="flex-item">
+                                <div class="good-top">
+                                    <div class="good-top-left">
+                                        <div class="size">
+                                            <div class="header">
+                                                <span class="number">折线图</span>
+                                                <!--<span class="fa fa-angle-down"></span>-->
+                                            </div>
+                                            <!--<div class="options" style="display: block">-->
+                                            <!--<div class="option">折线图</div>-->
+                                            <!--<div class="option">柱状图</div>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="good-top-right">
+                                        <div class="choose-color">
+                                            <div class="line_blue_two"></div>
+                                            <div class="line_yellow_two"></div>
+                                            <div class="line_green_two"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="good-image">
+                                    <img src="../images/line_blue_two.png">
+                                </div>
+                                <div class="good-bottom" style="text-align: center">
+                                    <button type="button" class="btn btn-sm btn-success" onclick="myFunction('line_chart_two');button()" >确定</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tile">
+                            <div class="flex-item">
+                                <div class="good-top">
+                                    <div class="good-top-left">
+                                        <div class="size">
+                                            <div class="header">
+                                                <span class="number">折线图</span>
+                                                <!--<span class="fa fa-angle-down"></span>-->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="good-top-right">
+                                        <div class="choose-color">
+                                            <div class="line_blue_three"></div>
+                                            <div class="line_yellow_three"></div>
+                                            <div class="line_green_three"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="good-image">
+                                    <img src="../images/line_green_three.png">
+                                </div>
+                                <div class="good-bottom" style="text-align: center">
+                                    <button type="button" class="btn btn-sm btn-success" onclick="myFunction('line_chart_three');button()" >确定</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--第二行改变词云颜色，报表样式等，后台与数据大屏交互-->
+                <!--第二行改变词云颜色，报表样式等，后台与数据大屏交互-->
+                <!--第二行改变词云颜色，报表样式等，后台与数据大屏交互-->
+                <!--第二行改变词云颜色，报表样式等，后台与数据大屏交互-->
+                <!--第二行改变词云颜色，报表样式等，后台与数据大屏交互-->
+                <!--第二行改变词云颜色，报表样式等，后台与数据大屏交互-->
+                <div class="row" >
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" >
+                        <div class="tile">
+                            <div class="flex-item">
+                                <div class="good-top">
+                                    <div class="good-top-left">
+                                        <div class="size">
+                                            <div class="header">
+                                                <span class="number">词云（默认）</span>
+                                                <!--<span class="fa fa-angle-down"></span>-->
+                                            </div>
+                                            <!--<div class="options" style="display: block">-->
+                                            <!--<div class="option">折线图</div>-->
+                                            <!--<div class="option">柱状图</div>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="good-top-right" >
+                                        <div class="choose-color">
+                                            <div class="cloud_blue" ></div>
+                                            <div class="cloud_yellow"></div>
+                                            <div class="cloud_green"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="good-image">
+                                    <img src="../images/cloud_green.png">
+                                </div>
+                                <div class="good-bottom" style="text-align: center">
+                                    <!--<span style="height: 21px; font-size: 20px">折线图样式</span>-->
+                                    <button type="button" class="btn btn-sm btn-success" onclick="myFunction('cloud');button()" >确定</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tile">
+                            <div class="flex-item">
+                                <div class="good-top">
+                                    <div class="good-top-left">
+                                        <div class="size">
+                                            <div class="header">
+                                                <span class="number">词云</span>
+                                                <!--<span class="fa fa-angle-down"></span>-->
+                                            </div>
+                                            <!--<div class="options" style="display: block">-->
+                                            <!--<div class="option">折线图</div>-->
+                                            <!--<div class="option">柱状图</div>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="good-top-right">
+                                        <div class="choose-color">
+                                            <div class="cloud_blue" ></div>
+                                            <div class="cloud_yellow"></div>
+                                            <div class="cloud_green"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="good-image">
+                                    <img src="../images/cloud_blue.png">
+                                </div>
+                                <div class="good-bottom" style="text-align: center">
+                                    <button type="button" class="btn btn-sm btn-success" onclick="myFunction('cloud')" >确定</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tile">
+                            <div class="flex-item">
+                                <div class="good-top">
+                                    <div class="good-top-left">
+                                        <div class="size">
+                                            <div class="header">
+                                                <span class="number">词云</span>
+                                                <!--<span class="fa fa-angle-down"></span>-->
+                                            </div>
+                                            <!--<div class="options" style="display: block">-->
+                                            <!--<div class="option">折线图</div>-->
+                                            <!--<div class="option">柱状图</div>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="good-top-right">
+                                        <div class="choose-color">
+                                            <div class="cloud_blue" ></div>
+                                            <div class="cloud_yellow"></div>
+                                            <div class="cloud_green"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="good-image">
+                                    <img src="../images/blank.png">
+                                </div>
+                                <div class="good-bottom" style="text-align: center">
+                                    <button type="button" class="btn btn-sm btn-success" onclick="myFunction('cloud')" >确定</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--第三行改变地图颜色，边框颜色等，后台与数据大屏交互-->
+                <!--第三行改变地图颜色，边框颜色等，后台与数据大屏交互-->
+                <!--第三行改变地图颜色，边框颜色等，后台与数据大屏交互-->
+                <!--第三行改变地图颜色，边框颜色等，后台与数据大屏交互-->
+                <!--第三行改变地图颜色，边框颜色等，后台与数据大屏交互-->
+                <!--第三行改变地图颜色，边框颜色等，后台与数据大屏交互-->
+
+                <div class="row" >
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" >
+                        <div class="tile">
+                            <div class="flex-item">
+                                <div class="good-top">
+                                    <div class="good-top-left">
+                                        <div class="size">
+                                            <div class="header">
+                                                <span class="number">地图（默认）</span>
+                                                <!--<span class="fa fa-angle-down"></span>-->
+                                            </div>
+                                            <!--<div class="options" style="display: block">-->
+                                            <!--<div class="option">折线图</div>-->
+                                            <!--<div class="option">柱状图</div>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="good-top-right" >
+                                        <div class="choose-color">
+                                            <div class="map_blue" ></div>
+                                            <div class="map_yellow"></div>
+                                            <div class="map_green" ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="good-image">
+                                    <img src="../images/map_blue.png">
+                                </div>
+                                <div class="good-bottom" style="text-align: center">
+                                    <!--<span style="height: 21px; font-size: 20px">折线图样式</span>-->
+                                    <button type="button" class="btn btn-sm btn-success" onclick="myFunction('map');button()" >确定</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tile">
+                            <div class="flex-item">
+                                <div class="good-top">
+                                    <div class="good-top-left">
+                                        <div class="size">
+                                            <div class="header">
+                                                <span class="number">地图</span>
+                                                <!--<span class="fa fa-angle-down"></span>-->
+                                            </div>
+                                            <!--<div class="options" style="display: block">-->
+                                            <!--<div class="option">折线图</div>-->
+                                            <!--<div class="option">柱状图</div>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="good-top-right">
+                                        <div class="choose-color">
+                                            <div class="map_blue" ></div>
+                                            <div class="map_yellow"></div>
+                                            <div class="map_green" ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="good-image">
+                                    <img src="../images/blank.png">
+                                </div>
+                                <div class="good-bottom" style="text-align: center">
+                                    <button type="button" class="btn btn-sm btn-success" onclick="myFunction('map')" >确定</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tile">
+                            <div class="flex-item">
+                                <div class="good-top">
+                                    <div class="good-top-left">
+                                        <div class="size">
+                                            <div class="header">
+                                                <span class="number">地图</span>
+                                                <!--<span class="fa fa-angle-down"></span>-->
+                                            </div>
+                                            <!--<div class="options" style="display: block">-->
+                                            <!--<div class="option">折线图</div>-->
+                                            <!--<div class="option">柱状图</div>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="good-top-right">
+                                        <div class="choose-color">
+                                            <div class="map_blue" ></div>
+                                            <div class="map_yellow"></div>
+                                            <div class="map_green" ></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="good-image">
+                                    <img src="../images/blank.png">
+                                </div>
+                                <div class="good-bottom" style="text-align: center">
+                                    <button type="button" class="btn btn-sm btn-success" onclick="myFunction('map')" >确定</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--第四行改变男女比例图颜色，边框颜色等，后台与数据大屏交互-->
+                <!--第四行改变男女比例图颜色，边框颜色等，后台与数据大屏交互-->
+                <!--第四行改变男女比例图颜色，边框颜色等，后台与数据大屏交互-->
+                <!--第四行改变男女比例图颜色，边框颜色等，后台与数据大屏交互-->
+                <!--第四行改变男女比例图颜色，边框颜色等，后台与数据大屏交互-->
+                <!--第四行改变男女比例图颜色，边框颜色等，后台与数据大屏交互-->
+                <div class="row" >
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12" >
+                        <div class="tile">
+                            <div class="flex-item">
+                                <div class="good-top">
+                                    <div class="good-top-left">
+                                        <div class="size">
+                                            <div class="header">
+                                                <span class="number">男女比例图（默认）</span>
+                                                <!--<span class="fa fa-angle-down"></span>-->
+                                            </div>
+                                            <!--<div class="options" style="display: block">-->
+                                            <!--<div class="option">折线图</div>-->
+                                            <!--<div class="option">柱状图</div>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="good-top-right" >
+                                        <div class="choose-color">
+                                            <div class="sex_blue"></div>
+                                            <div class="sex_yellow"></div>
+                                            <div class="sex_green"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="good-image">
+                                    <img src="../images/sex_blue.png">
+                                </div>
+                                <div class="good-bottom" style="text-align: center">
+                                    <button type="button" class="btn btn-sm btn-success" onclick="myFunction('sex');button()" >确定</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tile">
+                            <div class="flex-item">
+                                <div class="good-top">
+                                    <div class="good-top-left">
+                                        <div class="size">
+                                            <div class="header">
+                                                <span class="number">男女比例图</span>
+                                                <!--<span class="fa fa-angle-down"></span>-->
+                                            </div>
+                                            <!--<div class="options" style="display: block">-->
+                                            <!--<div class="option">折线图</div>-->
+                                            <!--<div class="option">柱状图</div>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="good-top-right">
+                                        <div class="choose-color">
+                                            <div class="sex_blue"></div>
+                                            <div class="sex_yellow"></div>
+                                            <div class="sex_green"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="good-image">
+                                    <img src="../images/blank.png">
+                                </div>
+                                <div class="good-bottom" style="text-align: center">
+                                    <button type="button" class="btn btn-sm btn-success" onclick="myFunction('sex')" >确定</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                        <div class="tile">
+                            <div class="flex-item">
+                                <div class="good-top">
+                                    <div class="good-top-left">
+                                        <div class="size">
+                                            <div class="header">
+                                                <span class="number">男女比例图</span>
+                                                <!--<span class="fa fa-angle-down"></span>-->
+                                            </div>
+                                            <!--<div class="options" style="display: block">-->
+                                            <!--<div class="option">折线图</div>-->
+                                            <!--<div class="option">柱状图</div>-->
+                                            <!--</div>-->
+                                        </div>
+                                    </div>
+                                    <div class="good-top-right">
+                                        <div class="choose-color">
+                                            <div class="sex_blue"></div>
+                                            <div class="sex_yellow"></div>
+                                            <div class="sex_green"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="good-image">
+                                    <img src="../images/blank.png">
+                                </div>
+                                <div class="good-bottom" style="text-align: center">
+                                    <button type="button" class="btn btn-sm btn-success" onclick="myFunction('sex')" >确定</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/toastr.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/bootstrap-select.min.js"></script>
+<script src="script.js"></script>
+<script type="text/javascript">
+    toastr.options.positionClass = 'toast-center-center';
+    function button(){
+        $("#btn_edit").click(function () {
+            var arrselections = $("#tb_departments").bootstrapTable('getSelections');
+            if (arrselections.length > 1) {
+                toastr.warning('只能选择一行进行编辑');
+                return;
+            }
+            if (arrselections.length <= 0) {
+                toastr.warning('请选择有效数据');
+
+                return;
+            }
+
+            $('#myModal').modal();
+        });
+        toastr.success('提交数据成功');
+    }
+</script>
+</body>
+</html>
