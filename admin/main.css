@@ -11,6 +11,218 @@
  * Copyright 2011-2018 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+/*设置模块内边距，使布局合理*/
+.carousel-example {
+  padding: 20px 0px 50px 0;
+}
+.carousel-control {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  bottom: auto;
+  font-size: 30px;
+  text-align: center;
+  opacity: 1;
+}
+.good-top {
+  height: 21px;
+  width: 100%;
+  /*height: 10px;*/
+}
+/*设置下拉选择框标题文字样式等*/
+.good-top-left {
+  font-size: 16px;
+  color: #424242;
+  text-transform: uppercase;
+  line-height: 21px;
+}
+/*设置颜色选择框高度*/
+.good-top-right {
+  height: 21px;
+  text-align: right;
+}
+/*设置下拉选择框标题样式*/
+.size {
+  position: absolute;
+  padding: 0;
+  cursor: pointer;
+  transition: all .35s;
+}
+/*设置下拉选择框边框背景颜色*/
+.size.shown {
+  padding: 0 5px 5px 5px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.size.shown .option:hover {
+  background-color: #f5f6f7;
+  /*background-color: #00FF00;*/
+}
+/*设置下拉选择框高度和字体大小*/
+.good-top-left .fa {
+  position: relative;
+  top: 2px;
+  font-size: 21px;
+}
+/*.good-top-right .fa {*/
+/*position: relative;*/
+/*top: 2px;*/
+/*font-size: 21px;*/
+/*}*/
+
+/*颜色修改功能样式容器高度等设置*/
+.choose-color div {
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  letter-spacing: 5px;
+  cursor: pointer;
+}
+/*设置图片高度和使图片居中*/
+.good-image {
+  /*height: 294px;*/
+  height: 100px;
+  text-align: center;
+}
+/*在good-image之前设置图片样式*/
+.good-image:before {
+  /*插入内容为空*/
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+/*设置图片的最大高度，不能比规定高度高*/
+.good-image img {
+  max-width: 250px;
+  max-height: 80px;
+  /*vertical-align: middle;*/
+}
+.good-bottom {
+  height: 21px;
+}
+
+.good-bottom * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.good-bottom-left a h4 {
+  font-size: 18px;
+  color: #3c3c3c;
+  text-transform: uppercase;
+  line-height: 21px;
+}
+
+.good-bottom-right {
+  position: relative;
+  top: -1px;
+  font-size: 22px;
+  color: #424242;
+  text-transform: uppercase;
+  line-height: 21px;
+}
+
+.good-top-left,
+.good-bottom-left {
+  float: left;
+  text-align: left;
+}
+a.carousel-control.left,
+a.carousel-control.right {
+  background-image: none;
+  opacity: 1;
+  text-align: center;
+}
+.choose-color .line_blue_two {
+    background-color: #165eb9;
+}
+
+.choose-color .line_yellow_two {
+    background-color: #ffe637;
+}
+
+.choose-color .line_green_two {
+    background-color: lime;
+}
+
+.choose-color .line_blue_three {
+    background-color: #165eb9;
+}
+
+.choose-color .line_yellow_three {
+    background-color: #ffe637;
+}
+
+.choose-color .line_green_three {
+    background-color: lime;
+}
+
+.choose-color .line_blue {
+  background-color: #165eb9;
+}
+
+.choose-color .line_yellow {
+  background-color: #ffe637;
+}
+
+.choose-color .line_green {
+  background-color: lime;
+}
+.choose-color .cloud_blue {
+  background-color: #165eb9;
+}
+
+.choose-color .cloud_yellow {
+  background-color: #ffe637;
+}
+
+.choose-color .cloud_green {
+  background-color: lime;
+}
+.choose-color .map_blue {
+  background-color: #165eb9;
+}
+
+.choose-color .map_yellow {
+  background-color: #ffe637;
+}
+
+.choose-color .map_green {
+  background-color: lime;
+}
+.choose-color .sex_blue {
+  background-color: #165eb9;
+}
+
+.choose-color .sex_yellow {
+  background-color: #ffe637;
+}
+
+.choose-color .sex_green {
+  background-color: lime;
+}
+
+.choose-color .grey {
+  background-color: #d3a7ac;
+}
+
+
+
+#complicated-content-carousel .tile:hover,
+#complicated-content-carousel .tile:focus {
+  border: 6px solid #d2d4d5;
+  border-radius: 3px;
+}
+#complicated-content-carousel .tile:focus
+{
+  border-radius: 3px;
+  border: 6px solid lime;
+}
+
 
 
 .list-width{
@@ -701,7 +913,7 @@ pre code {
   position: relative;
   width: 100%;
   min-height: 1px;
-  padding-right: 15px;
+  padding-right:15px;
   padding-left: 15px;
 }
 
@@ -14257,6 +14469,7 @@ be a descendant of the grid when it is being dragged.
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  height: 200px;
   /*height:406px;*/
   /*height: 100%;*/
 }

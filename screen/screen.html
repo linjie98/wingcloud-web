@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device width initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="screen.css">
+
+    <!--<script src="../js/jquery-3.3.1.min.js"></script>-->
+    <!--<script src="../js/echarts.js"></script>-->
+    <!--<script src="../js/script.js"></script>-->
+
+</head>
+<body class="body1">
+
+
+
+
+
+
+<header class = "header">
+    <!--<h3 style="margin-left: 30%;">wingcloud实时计算数据大屏</h3>-->
+    <p style="text-align: center; font-size: 28px; color: #ff8200; font-family: monospace;">wingcloud实时计算数据大屏</p>
+</header>
+    <div class="wrapper">
+        <div class="container-fluid">
+            <!--流体布局第一层栅格，3:6:3-->
+            <div class="row fill-height">
+                <div class="col-lg-3 fill-height">
+                    <div class="gird-height-3" >
+                        <div class="cells-1 message" >
+                            <div class="topRec_List ">
+                                <p style="font-size: 18px; color: #FF8C00">>>实时订单数据</p>
+                                <dl>
+                                    <dd>商品ID</dd>
+                                    <dd>商品名称</dd>
+                                    <dd>订单量</dd>
+                                    <!--<dd>时间</dd>-->
+                                </dl>
+                                <div class="maquee">
+                                    <ul>
+                                        <li>
+                                            <div>1</div>
+                                            <div>王**</div>
+                                            <div>中了30元</div>
+                                            <!--<div>2014/12/30 14:20</div>-->
+                                        </li>
+                                        <li>
+                                            <div>2</div>
+                                            <div>王**</div>
+                                            <div>中了30元</div>
+                                            <!--<div>2014/12/30 14:20</div>-->
+                                        </li>
+                                        <li>
+                                            <div>3</div>
+                                            <div>王**</div>
+                                            <div>中了30元</div>
+                                            <!--<div>2014/12/30 14:20</div>-->
+                                        </li>
+                                        <li>
+                                            <div>4</div>
+                                            <div>王**</div>
+                                            <div>中了30元</div>
+                                            <!--<div>2014/12/30 14:20</div>-->
+                                        </li>
+                                        <li>
+                                            <div>5</div>
+                                            <div>王**</div>
+                                            <div>中了30元</div>
+                                            <!--<div>2014/12/30 14:20</div>-->
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        <!--男女比例图-->
+                        <div class="gird-height-1">
+                            <div class="cells-2">
+                            <div class="fill-height" id="sexchart"></div>
+                            </div>
+                        </div>
+                </div>
+
+
+
+
+
+                <!--地图上方数据显示-->
+                <div class="col-lg-6 fill-height">
+                    <div class="row" style="margin-top: 55px">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                <span class="span1" >销售总金额</span>
+                                <p class="p2" id="market_money"><span class="span2"></span></p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                                <span class="span1">销售总金额</span>
+                                <p class="p2" id="market_money_two">25亿<span class="span2">元 </span></p>
+                        </div>
+                    </div>
+
+
+
+                    <!--地图显示-->
+                    <div class="gird-height-2">
+                        <div class="fill-height"id="EC"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12" >
+                            <p style="font-size: 16px;color: #00ffff;margin-left: 500px">全国订单分布</p>
+                        </div>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-info" style="position: absolute; top: 20px;right: 20px; z-index: 9999;">前往报表配置</button>
+
+                <div class="col-lg-3 fill-height">
+                    <!--<div class="cells" >-->
+                        <!--折线图上方留白，另起一行设置栅格大小，可添加元素-->
+
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 gird-height-5">
+                            </div>
+                        </div>
+                        <div class="gird-height-3" >
+                            <div class="cells-3">
+                                <div class="col-lg-12 col-md-12  col-sm-12 col-xs-12 fill-height">
+                                    <div class="fill-height"id="linechart"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gird-height-4">
+                            <div class="cells-4">
+                                <div class="fill-height" id="cloudchart"></div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="../js/countUp.min.js"></script>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<!--<script src="../js/fakeloader.min.js"></script>-->
+<script src="../js/socket.io.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/echarts.js"></script>
+<script src="../js/china.js"></script>
+<script src="../js/easeljs.min.js"></script>
+<script src="../js/lodash.min.js"></script>
+<script src="../js/myTooltip.js"></script>
+<script src="../js/TweenMax.min.js"></script>
+<script src="../js/echarts-wordcloud.js"></script>
+<script src="../admin/script.js"></script>
+<script src="../js/transfer.js"></script>
+<script type="text/javascript" src="screen.js"></script>
+
+<script>
+    function autoScroll(obj){
+        $(obj).find("ul").animate({
+            marginTop : "-39px"
+        },500,function(){
+            $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);
+        })
+    }
+    $(function(){
+        setInterval('autoScroll(".maquee")',1000);
+
+    })
+</script>
+
+<!--<script  src="../js/script.js"></script>-->
+</html>
