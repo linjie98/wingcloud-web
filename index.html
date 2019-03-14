@@ -21,6 +21,9 @@
             background-color: #393D49;
             border-color: #393D49;
         }
+        .navbar-brand {
+            padding: 10px 15px;
+        }
         .input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
             z-index: 2;
             margin-left: -1px;
@@ -141,7 +144,7 @@
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand" href="#"><span><img src="images/logo.svg"></span></a>
+                <a class="navbar-brand" href="#"><span><img src="images/logo_white64.png"  width="180px" height="40"></span></a>
                 <ul class="user-menu">
                     <li class="dropdown pull-right">
                         <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span> User <span class="caret"></span></a>-->
@@ -151,7 +154,7 @@
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
-                            <li><a href="test.html" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog"></span> help</a></li>
+                            <li><a href="help.html" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog"></span> help</a></li>
                             <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> <span id="logout">Logout</span></a></li>
                         </ul>
                     </li>
@@ -175,18 +178,18 @@
                                     <span class="caret"></span>
                                 </button>
                                 <ul class="dropdown-menu">
-                                  <li><a href="#" id="categories" onclick="shows($(this).text())" data-toggle="modal" data-target="#myModal">类别</a></li>
+                                  <li><a href="#" id="categories" onclick="shows($(this).text())" data-toggle="modal" data-target="#myModal">平台</a></li>
                                   <li><a href="#" id="keyvalue" onclick="shows($(this).text())">自定义</a></li>
                                 </ul>
                             </div><!-- /btn-group -->
                         <input type="text" name="search-input" id="search-input" class="form-control" placeholder="输入关键词" aria-describedby="sizing-addon1"/>
                         <span class="input-group-btn">
-                             <button class="btn btn-default" type="button" id="search">搜 索</button>
+                            <button class="btn btn-default" type="button" id="search"><a href="screen/screen.html" style="text-decoration:none; color:#1b3548;">搜 索</a></button>
                         </span>
 
                     </div>
 
-                    <div class="alert alert-success" id="keyvalue-id" role="alert" style="display: none">输入你要搜索的商品关键字哦</div>
+                    <div class="alert alert-success" id="keyvalue-id" role="alert" style="display: none">输入你要搜索的平台关键字哦</div>
                 </div>
             </div>
         </div>
@@ -203,49 +206,29 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">请选择类别！</h4>
+                <h4 class="modal-title" id="myModalLabel">请选择店铺！</h4>
             </div>
             <div class="modal-body">
                 <div>
                     <div class="radio icheck-asbestos">
-                        <input type="radio" checked id="asbestos1" name="asbestos" value="女装"/>
-                        <label for="asbestos1">女装</label>
+                        <input type="radio" checked id="asbestos1" name="asbestos" value="天猫"/>
+                        <label for="asbestos1">天猫</label>
                     </div>
                     <div class="radio icheck-asbestos">
-                        <input type="radio" id="asbestos2" name="asbestos" value="男装"/>
-                        <label for="asbestos2">男装</label>
+                        <input type="radio" id="asbestos2" name="asbestos" value="淘宝"/>
+                        <label for="asbestos2">淘宝</label>
                     </div>
                     <div class="radio icheck-asbestos">
-                        <input type="radio" id="asbestos3" name="asbestos" value="美妆"/>
-                        <label for="asbestos3">美妆</label>
+                        <input type="radio" id="asbestos3" name="asbestos" value="京东"/>
+                        <label for="asbestos3">京东</label>
                     </div>
                     <div class="radio icheck-asbestos">
-                        <input type="radio" id="asbestos4" name="asbestos" value="女鞋"/>
-                        <label for="asbestos4">女鞋</label>
+                        <input type="radio" id="asbestos4" name="asbestos" value="唯品会"/>
+                        <label for="asbestos4">唯品会</label>
                     </div>
                     <div class="radio icheck-asbestos">
-                        <input type="radio" id="asbestos5" name="asbestos" value="手机"/>
-                        <label for="asbestos5">手机</label>
-                    </div>
-                    <div class="radio icheck-asbestos">
-                        <input type="radio" id="asbestos6" name="asbestos" value="汽车"/>
-                        <label for="asbestos6">汽车</label>
-                    </div>
-                    <div class="radio icheck-asbestos">
-                        <input type="radio" id="asbestos7" name="asbestos" value="童装"/>
-                        <label for="asbestos7">童装</label>
-                    </div>
-                    <div class="radio icheck-asbestos">
-                        <input type="radio" id="asbestos8" name="asbestos" value="零食"/>
-                        <label for="asbestos8">零食</label>
-                    </div>
-                    <div class="radio icheck-asbestos">
-                        <input type="radio" id="asbestos9" name="asbestos" value="手表"/>
-                        <label for="asbestos9">手表</label>
-                    </div>
-                    <div class="radio icheck-asbestos">
-                        <input type="radio" id="asbestos10" name="asbestos" value="母婴"/>
-                        <label for="asbestos10">母婴</label>
+                        <input type="radio" id="asbestos5" name="asbestos" value="拼多多"/>
+                        <label for="asbestos5">拼多多</label>
                     </div>
                 </div>
             </div>
@@ -304,8 +287,9 @@
             //     request.setRequestHeader("Authorization", MyLocalStorage.Cache.get('cookieKey'));
             // },
             success:function(data){
+
                 if (data.user_name==null){
-                    window.location.href = 'http://localhost:63342/WingCloud_Web/login.html?_ijt=3gn91595nkcca2qoa0nvklio83';
+                    window.location.href = 'http://localhost:63342/wingcloud-web/login.html';
                 }
                 $("#name").html(data.user_name);
 
@@ -321,8 +305,8 @@
                 //     //返回首页
                 //     window.location.href = 'http://localhost:63342/test/index.html?_ijt=5s2aqchoafa7q5126joj5blfc8';
                 // }
-                alert(xhr.status+' '+xhr.readyState+' '+textStatus);
-                window.location.href = 'http://localhost:63342/WingCloud_Web/login.html?_ijt=3gn91595nkcca2qoa0nvklio83';
+                //alert(xhr.status+' '+xhr.readyState+' '+textStatus);
+                window.location.href = 'http://localhost:63342/wingcloud-web/login.html';
             }
         })
     }
@@ -359,90 +343,51 @@
                 //     //返回首页
                 //     window.location.href = 'http://localhost:63342/test/index.html?_ijt=5s2aqchoafa7q5126joj5blfc8';
                 // }
-                alert(xhr.status+' '+xhr.readyState+' '+textStatus);
+                //alert(xhr.status+' '+xhr.readyState+' '+textStatus);
             }
         })
 
     })
 
     /**
+     * TODO
      * 搜索请求
      */
-    $("#search").click(function(){
-        //alert(MyLocalStorage.Cache.get('cookieKey'))
-        //第一步：取数据,这里用到了用户名和密码
-        var keyword = $(" input[ name='search-input' ] ").val()
-        alert(keyword)
-        $.ajax({
-            xhrFields: {
-                withCredentials: true
-            },
-            url:"http://localhost:8080/api/search/query"+"?keyword="+keyword,//请求地址
-            // data:{},//提交的数据
-            contentType:"application/json",
-            //contentType: "application/x-www-form-urlencoded; charset=utf-8",
-            type:"get",//提交的方式
-            dataType:"json", //返回类型 TEXT字符串 JSON XML
-            // beforeSend: function(request) {
-            //     request.setRequestHeader("Authorization", MyLocalStorage.Cache.get('cookieKey'));
-            // },
-            success:function(data){
-                alert(data)
-               // window.location.href="login.html"
-            },
-            error:function(xhr, textStatus, errorThrown){
-                alert(xhr.status+' '+xhr.readyState+' '+textStatus);
-            }
-        })
+    // $("#search").click(function(){
+    //     //alert(MyLocalStorage.Cache.get('cookieKey'))
+    //     //第一步：取数据,这里用到了用户名和密码
+    //     var keyword = $(" input[ name='search-input' ] ").val()
+    //     //alert(keyword)
+    //     $.ajax({
+    //         xhrFields: {
+    //             withCredentials: true
+    //         },
+    //         url:"http://localhost:8080/api/search/query"+"?keyword="+keyword,//请求地址
+    //         // data:{},//提交的数据
+    //         contentType:"application/json",
+    //         //contentType: "application/x-www-form-urlencoded; charset=utf-8",
+    //         type:"get",//提交的方式
+    //         dataType:"json", //返回类型 TEXT字符串 JSON XML
+    //         // beforeSend: function(request) {
+    //         //     request.setRequestHeader("Authorization", MyLocalStorage.Cache.get('cookieKey'));
+    //         // },
+    //         success:function(data){
+    //             //alert(data)
+    //            // window.location.href="login.html"
+    //         },
+    //         error:function(xhr, textStatus, errorThrown){
+    //             //alert(xhr.status+' '+xhr.readyState+' '+textStatus);
+    //             console.log(xhr.status+' '+xhr.readyState+' '+textStatus)
+    //         }
+    //     })
+    //
+    // })
 
-    })
 
 
 
-    function show(highlight, href) {
-        //由于为Java集合 的 List 类型、 Array 类型共存，只能这样
-        var i = 0;
-        $.each(highlight, function(index, title) {
-            var a = $("<a></a>").append(title.title[0]).attr("href", href[i].href[0]);
-            a.attr("target", "_blank");
-            var bq = $("<blockquote class='layui-elem-quote'>").append(a);
-            var div = $("<div></div>").append(bq);
-            $('#result').append("<hr />").append(div)
-            i++;
-        });
-    }
 
-    function upd() {
-        var q = $("#query").val();
-        $.ajax({
-            type: "get",
-            url: "http://localhost/test/select/" + q + "/0/5",
-            success: function(result) {
-                $('#result').empty()
-                var highlight = result.highlight;
-                var href = result.href;
-                var total = result.total;
-                show(highlight, href);
-                //分页条再次渲染
-                layui.use('laypage', function() {
-                    //获取页模块
-                    var laypage = layui.laypage;
-                    //执行一个laypage实例
-                    laypage.render({
-                        //注意，这里的 page 是 ID，不用加 # 号
-                        elem: 'page',
-                        //数据总数，从服务端得到
-                        count: total,
-                        //每页的数据量
-                        limit: 5,
-                        //相连页数量
-                        groups: 5
-                    });
-                });
 
-            }
-        });
-    }
 
 
 </script>
