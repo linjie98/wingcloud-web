@@ -157,6 +157,47 @@ function preloadImagesForCarousel() {
     $("[data-toggle='treeview.'].is-expanded").parent().toggleClass('is-expanded');
 
     //Activate bootstrip tooltips
-    $("[data-toggle='tooltip']").tooltip();
+    // $("[data-toggle='tooltip']").tooltip();
 
 })();
+
+
+
+window.onload = function () {
+
+    $.ajax({
+        xhrFields: {
+            withCredentials: true
+        },
+        url:"http://localhost:8080/api/user/getusermsg",//请求地址
+        data:{},//提交的数据
+        contentType:"application/text",
+        //contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        type:"post",//提交的方式
+        dataType:"json", //返回类型 TEXT字符串 JSON XML
+        // beforeSend: function(request) {
+        //     request.setRequestHeader("Authorization", MyLocalStorage.Cache.get('cookieKey'));
+        // },
+        success:function(data){
+            if (data.user_name==null){
+                window.location.href = 'http://localhost:63342/WingCloud_Web/login.html?_ijt=3gn91595nkcca2qoa0nvklio83';
+            }
+            $("#name").html(data.user_name);
+
+        },
+        error:function(xhr, textStatus, errorThrown){
+            //请求失败
+            //通过状态码判断401
+            // alert(xhr.status)
+            // alert(xhr.readyState);
+            // alert(textStatus);
+            // if (xhr.status === 401) {
+            //     alert('身份验证已过期，请重新登陆.');
+            //     //返回首页
+            //     window.location.href = 'http://localhost:63342/test/index.html?_ijt=5s2aqchoafa7q5126joj5blfc8';
+            // }
+            //alert(xhr.status+' '+xhr.readyState+' '+textStatus);
+            window.location.href = 'http://localhost:63342/WingCloud_Web/login.html?_ijt=3gn91595nkcca2qoa0nvklio83';
+        }
+    })
+}
