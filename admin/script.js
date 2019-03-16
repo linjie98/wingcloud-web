@@ -1,8 +1,14 @@
 /* global $ */
 
 
-window.onload = function () {
 
+
+
+
+/**
+ * 用户信息
+ */
+function usermsg() {
     $.ajax({
         xhrFields: {
             withCredentials: true
@@ -36,6 +42,61 @@ window.onload = function () {
             // }
             //alert(xhr.status+' '+xhr.readyState+' '+textStatus);
             window.location.href = 'http://localhost:63342/wingcloud-web/login.html';
+        }
+    })
+}
+usermsg();
+
+
+
+
+/**
+ * 微服务监控数据
+ */
+window.onload = function () {
+
+    var count = 0;
+    $.ajax({
+        xhrFields: {
+            withCredentials: true
+        },
+        url:"http://localhost:8080/api/admin/getserviceport",//请求地址
+        data:{},//提交的数据
+        contentType:"application/text",
+        //contentType: "application/x-www-form-urlencoded; charset=utf-8",
+        type:"post",//提交的方式
+        dataType:"json", //返回类型 TEXT字符串 JSON XML
+        success:function(data){
+            $.each(data.list, function (index, item) {
+                count++;
+                if (count === 1){
+                    console.log(item.servicename)
+                    $("#service1").html(item.servicename);
+                    $("#service1_port").html(item.serviceport);
+                }else if (count === 2){
+                    $("#service2").html(item.servicename);
+                    $("#service2_port").html(item.serviceport);
+                }else {
+                    $("#service3").html(item.servicename);
+                    $("#service3_port").html(item.serviceport);
+                }
+            });
+
+
+        },
+        error:function(xhr, textStatus, errorThrown){
+            //请求失败
+            //通过状态码判断401
+            // alert(xhr.status)
+            // alert(xhr.readyState);
+            // alert(textStatus);
+            // if (xhr.status === 401) {
+            //     alert('身份验证已过期，请重新登陆.');
+            //     //返回首页
+            //     window.location.href = 'http://localhost:63342/test/index.html?_ijt=5s2aqchoafa7q5126joj5blfc8';
+            // }
+            //alert(xhr.status+' '+xhr.readyState+' '+textStatus);
+            alert("获取服务监控数据失败")
         }
     })
 }
