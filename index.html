@@ -152,10 +152,9 @@
                             <img class="img-circle" width="34" height="34" src="images/avatar-male.jpg" /><span id="name"></span><b class="caret"></b></a>
 
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Profile</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
-                            <li><a href="help.html" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-cog"></span> help</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> <span id="logout">Logout</span></a></li>
+                            <li><a>Settings</a></li>
+                            <li id="help"><a>help</a></li>
+                            <li id="logout"><a>Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -349,6 +348,9 @@
 
     })
 
+    $("#help").click(function() {
+        window.location.href="http://localhost:8080/swagger-ui.html"
+    })
     /**
      * TODO
      * 搜索请求
