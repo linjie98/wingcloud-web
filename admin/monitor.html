@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="Vali is a responsive and free admin theme built with Bootstrap 4, SASS and PUG.js. It's fully customizable and modular.">
+
+    <title>性能监控</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Main CSS-->
+    <!-- Font-icon css-->
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <link rel="stylesheet" href="main.css">
+
+</head>
+<body class="app sidebar-mini rtl">
+<!-- Navbar-->
+<header class="app-header"><a class="app-header__logo" href="admin.html">WingCloud</a>
+    <!--设置收起样式-->
+    <a class="app-sidebar__toggle" href="data_monitor.html" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
+
+</header>
+<!-- Sidebar menu-->
+<div class="app-sidebar__overlay" data-toggle="sidebar"></div>
+<aside class="app-sidebar">
+    <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" width="34" height="34" src="../images/avatar-male.jpg" alt="admin">
+        <div>
+            <span id="name"></span>
+        </div>
+    </div>
+    <!--页面切换菜单栏-->
+    <ul class="app-menu">
+        <li><a class="app-menu__item " href="admin.html"><i class="app-menu__icon fa fa-bar-chart"></i><span class="app-menu__label">图表修改</span></a></li>
+        <li><a class="app-menu__item active" href="#"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">性能监控</span><i class="treeview-indicator"></i></a>
+    </ul>
+</aside>
+<main class="app-content">
+    <div class="app-title">
+        <div>
+            <h1><i class="fa fa-th-list"></i>性能监控</h1>
+            <p>监控服务/运维数据</p>
+        </div>
+        <ul class="app-breadcrumb breadcrumb">
+            <img src="../images/logo_black64.png">
+        </ul>
+    </div>
+    <!--设置栅格，一行两列-->
+    <!--设置栅格，一行两列-->
+    <!--设置栅格，一行两列-->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="tile-1">
+                <h3 class="tile-title">服务端口监控</h3>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>服务名称</th>
+                        <th>Port</th>
+                        <!--<th>Username</th>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td id="service1"></td>
+                        <td id="service1_port"></td>
+                        <!--<td>@mdo</td>-->
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td id="service2"></td>
+                        <td id="service2_port"></td>
+                        <!--<td>@fat</td>-->
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td id="service3"></td>
+                        <td id="service3_port"></td>
+                        <!--<td>@twitter</td>-->
+                    </tr>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-6">
+            <div class="tile-1">
+                <h3 class="tile-title">Kafka Topics</h3>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Topic Name</th>
+                        <th>Status</th>
+                        <!--<th>Username</th>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>sectopic</td>
+                        <td>active</td>
+                        <!--<td>@mdo</td>-->
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>maptopic</td>
+                        <td>inavtive</td>
+                        <!--<td>@fat</td>-->
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>test</td>
+                        <td>active</td>
+                        <!--<td>@twitter</td>-->
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-6">
+            <div class="tile-1">
+                <h3 class="tile-title">开发中..</h3>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Name</th>
+                        <!--<th>Username</th>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--<tr>-->
+                        <!--<td>1</td>-->
+                        <!--<td>Mark</td>-->
+                        <!--<td>Otto</td>-->
+                        <!--&lt;!&ndash;<td>@mdo</td>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2</td>-->
+                        <!--<td>Jacob</td>-->
+                        <!--<td>Thornton</td>-->
+                        <!--&lt;!&ndash;<td>@fat</td>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>3</td>-->
+                        <!--<td>Larry</td>-->
+                        <!--<td>the Bird</td>-->
+                        <!--&lt;!&ndash;<td>@twitter</td>&ndash;&gt;-->
+                    <!--</tr>-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+        <div class="col-md-6">
+            <div class="tile-1">
+                <h3 class="tile-title">开发中..</h3>
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Name</th>
+                        <!--<th>Username</th>-->
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <!--<tr>-->
+                        <!--<td>1</td>-->
+                        <!--<td>Mark</td>-->
+                        <!--<td>Otto</td>-->
+                        <!--&lt;!&ndash;<td>@mdo</td>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2</td>-->
+                        <!--<td>Jacob</td>-->
+                        <!--<td>Thornton</td>-->
+                        <!--&lt;!&ndash;<td>@fat</td>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>3</td>-->
+                        <!--<td>Larry</td>-->
+                        <!--<td>the Bird</td>-->
+                        <!--&lt;!&ndash;<td>@twitter</td>&ndash;&gt;-->
+                    <!--</tr>-->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+
+
+        <!--<div class="col-md-6">-->
+            <!--<div class="tile-1">-->
+                <!--<h3 class="tile-title">Simple Table</h3>-->
+                <!--<table class="table table-striped">-->
+                    <!--<thead>-->
+                    <!--<tr>-->
+                        <!--<th>#</th>-->
+                        <!--<th>First Name</th>-->
+                        <!--<th>Last Name</th>-->
+                        <!--&lt;!&ndash;<th>Username</th>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tbody>-->
+                    <!--<tr>-->
+                        <!--<td>1</td>-->
+                        <!--<td>Mark</td>-->
+                        <!--<td>Otto</td>-->
+                        <!--&lt;!&ndash;<td>@mdo</td>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2</td>-->
+                        <!--<td>Jacob</td>-->
+                        <!--<td>Thornton</td>-->
+                        <!--&lt;!&ndash;<td>@fat</td>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>3</td>-->
+                        <!--<td>Larry</td>-->
+                        <!--<td>the Bird</td>-->
+                        <!--&lt;!&ndash;<td>@twitter</td>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--</tbody>-->
+                <!--</table>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+
+
+        <!--<div class="col-md-6">-->
+            <!--<div class="tile-1">-->
+                <!--<h3 class="tile-title">Striped Table</h3>-->
+                <!--<table class="table table-striped">-->
+                    <!--<thead>-->
+                    <!--<tr>-->
+                        <!--<th>#</th>-->
+                        <!--<th>First Name</th>-->
+                        <!--<th>Last Name</th>-->
+                        <!--&lt;!&ndash;<th>Username</th>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tbody>-->
+                    <!--<tr>-->
+                        <!--<td>1</td>-->
+                        <!--<td>Mark</td>-->
+                        <!--<td>Otto</td>-->
+                        <!--&lt;!&ndash;<td>@mdo</td>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>2</td>-->
+                        <!--<td>Jacob</td>-->
+                        <!--<td>Thornton</td>-->
+                        <!--&lt;!&ndash;<td>@fat</td>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--<tr>-->
+                        <!--<td>3</td>-->
+                        <!--<td>Larry</td>-->
+                        <!--<td>the Bird</td>-->
+                        <!--&lt;!&ndash;<td>@twitter</td>&ndash;&gt;-->
+                    <!--</tr>-->
+                    <!--</tbody>-->
+                <!--</table>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</main>
+<!-- Essential javascripts for application to work-->
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
