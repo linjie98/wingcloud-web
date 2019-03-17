@@ -4,7 +4,7 @@
 /*header样式*/
 .header{
     background: url("../images/header.png")0 0 / 100% 100% no-repeat;
-    height: 54px;
+    height: 58px;
     margin: 0 0px 0 -40px;
 }
 
@@ -98,7 +98,7 @@
 /*设置商品热销榜单与顶部的距离*/
 .message{
     /*高度距离太大响应式会与地图上方栅格重叠*/
-    margin-top: 30%;
+    margin-top: 50%;
 }
 /*设置滚动消息列表与热销商品top5字样的距离*/
 .destance{
@@ -162,7 +162,7 @@
 /*设置折线图上方，留白的栅格高度，距离顶部40%*/
 .gird-height-5{
     /*height: 15%;*/
-    margin-top: 30%;
+    margin-top: 50%;
 }
 /*设置店铺订单总销售额折线图容器高度*/
 .gird-height-3{
@@ -181,27 +181,43 @@
     /*height: 15%;*/
     margin-top: 45%;
 }
+
+
 /*设置销售总金额字体颜色样式*/
 .span1{
     margin-top: 40px;
     font-size: 20px;
     color: #eeeeee;
+    margin-left: 50px;
+    /*color: #cccccc;*/
+}
+/*设置人均消费字体颜色样式*/
+.span2{
+    margin-top: 40px;
+    font-size: 20px;
+    color: #eeeeee;
+    margin-left: 110px;
+
     /*color: #cccccc;*/
 }
 /*设置金额数样式*/
 .p2{
     /*color: #FF5722;*/
     color: #FF8C00;
-   font-size: 70px;
+    font-size: 70px;
     font-weight:bold;
 
 }
-/*设置元字样式*/
-.span2{
-    font-size: 20px;
-    margin-left: 5px;
-    color: #cccccc;
+/*设置人均消费金额样式*/
+.p3{
+    /*color: #FF5722;*/
+    color: #FF8C00;
+    font-size: 70px;
+    font-weight:bold;
+    margin-left: 60px;
 }
+
+
 *{ margin:0px; padding:0px; font-family:'微软雅黑'; -webkit-tap-highlight-color:rgba(0,0,0,0);  }
 li{ list-style:none }
 .topRec_List dl,.maquee{ width:90%; overflow:hidden; margin:0 auto; color:#7C7C7C}

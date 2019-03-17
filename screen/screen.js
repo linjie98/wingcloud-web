@@ -25,14 +25,31 @@ function addition_scroll(data){
         suffix: ''              // 后缀(数字的后缀 ,根据需要可设为 元,个,美元 等)
     };
     var add_market_money = new CountUp('market_money',  0, data, 2, 1, market_money_options);
-    var add_market_money_two = new CountUp('market_money_two',  0, data, 2, 1, market_money_options);
+
 
     if (!add_market_money.error) {
         add_market_money.start();
-    } else if (!add_market_money_two.error){
-        add_market_money_two.start();
-    } else {
+    }  else {
         console.error(add_market_money.error);
+    }
+}
+
+function addition_scroll_avg(data){
+    var market_money_options = {
+        useEasing: true, 	    // 使用缓和
+        useGrouping: true,      // 使用分组(是否显示千位分隔符,一般为 true)
+        separator: ',',         // 分隔器(千位分隔符,默认为',')
+        decimal: '.',          // 十进制(小数点符号,默认为 '.')
+        prefix: '¥',	            // 字首(数字的前缀,根据需要可设为 $,¥,￥ 等)
+        suffix: ''              // 后缀(数字的后缀 ,根据需要可设为 元,个,美元 等)
+    };
+
+    var add_market_money_two = new CountUp('market_money_two',  0, 128, 2, 1, market_money_options);
+
+    if (!add_market_money_two.error){
+        add_market_money_two.start();
+    }else {
+        console.error(add_market_money_two.error);
     }
 }
 
@@ -47,7 +64,8 @@ window.onload = function (){
     changeChartTypeAndColor('map','blue');
     changeChartTypeAndColor('sex','blue');
     allmoney();
-
+    avgmoney();
+    roll_chart();
 
 }
 /**
@@ -1117,8 +1135,8 @@ function map_chart(charts_color) {
     /**
      * 定义地图数据数组变量
      */
+    //var maparray = [{name:'嘉兴',value:99},{name:'杭州',value:99},{name:'上海',value:199},{name:'重庆',value:39},{name:'扬州',value:81},{name:'常州',value:80},{name:'桂林',value:43},{name:'大同',value:66},{name:'成都',value:129},{name:'宝鸡',value:79}];
     var maparray = [];
-
     /**
      * 如果有相同键则为1
      * 没有则为0
@@ -1178,8 +1196,8 @@ function cloud_chart(charts_color) {
     /**
      * 定义地图数据数组变量
      */
+    //var cloudarray = [{name:'女装',value:99},{name:'美妆',value:199},{name:'男装',value:79},{name:'鞋靴',value:82},{name:'箱包',value:20},{name:'书籍',value:100},{name:'宠物食品',value:70},{name:'童装',value:50},{name:'医药',value:19}];
     var cloudarray = [];
-
     /**
      * 如果有相同键则为1
      * 没有则为0
@@ -1204,7 +1222,7 @@ function cloud_chart(charts_color) {
             /**
              * 后台返回键值对，如果键已经在cloudarray中存在则相加，否则直接插入数据
              */
-            for (let i = 0; i < maparray.length; i += 1) {
+            for (let i = 0; i < cloudarray.length; i += 1) {
                 if (cloudarray[i].name === item.name) {
                     cloudarray[i].value = item.value + cloudarray[i].value;
                     flag = 1;
@@ -1303,10 +1321,72 @@ function roll_chart() {
             rolldata.splice(1,1,item.shopname);
             rolldata.splice(2,1,item.shoptype);
         });
-
+        transfer_data(rolldata);
     });
-
+    transfer_data(rolldata);
 }
+
+
+
+
+/**消息滚动列表
+ * 定义全局变量scrolllist分别用于接收插入的li，以及后面的div的值
+ * list_two用于接收插入ul中的各个li整体
+ * list_three,当数据大于五条时用于接收
+ * @type {string}
+ */
+var scrolllist="";
+var list_two="";
+var list_three="";
+var sign = 0;
+
+function transfer_data(scroll_data) {
+
+    //调用函数生成一个li
+    scrolllist = "<li>";
+    for (var i = 0; i < scroll_data.length; i++) {
+        scrolllist += "<div>" + scroll_data[i] + "</div>";
+    }
+    scrolllist += "</li>";
+    sign++;//每生成一个li，sign加一计数
+    if (sign > 5) {
+        // 找到id为box的ul位置
+        var list_exchange = document.getElementById("box");
+        console.log(list_exchange);
+        //找到box下的所有li
+        var childrens = list_exchange.getElementsByTagName('li');
+        console.log(childrens);
+        //把生成的li消息列表赋给list_three
+        list_three = scrolllist;
+        console.log(list_three)
+        // 让后面生成的li消息列随机覆盖五条消息中的一条显示在大屏上
+        for (let j = sign % 5;;) {
+            document.getElementById("box").children[j].innerHTML = list_three;
+            // console.log(children[j]);
+            break;
+        }
+    } else {
+        list_two += scrolllist;
+        console.log(list_two)
+        document.getElementById('box').innerHTML = list_two
+    }
+    setInterval('autoScroll(".maquee")',1000);
+}
+/**
+ * 消息列表滚动效果
+ * @param obj
+ */
+function autoScroll(obj){
+    $(obj).find("ul").animate({
+        //animate将元素从一个状态改变为另一个状态
+        marginTop : "-39px" //设置元素的上外边距
+    },1000,function(){
+        $(this).css({marginTop : "0px"}).find("li:first").appendTo(this);
+        // 在被选元素结尾插入指定内容
+    })
+}
+
+
 
 /**
  * 折线图环比增长速度报表数据
@@ -1316,8 +1396,11 @@ function line_chart(key,charts_color) {
      * 定义折线图的数组
      * @type {Array}
      */
-    var datetimes = [];    //类别数组（实际用来盛放X轴坐标值）
+    //var datetimes = ['08:20:13','08:20:20','08:20:27'];    //类别数组（实际用来盛放X轴坐标值）
+    //var flows = [30.1,20.8,32.1];
+    var datetimes = [];
     var flows = [];
+
     /**
      * 接收后台推送
      * @type {string|Array<module:echarts~ECharts>|AudioNode|void|*}
@@ -1363,4 +1446,16 @@ function allmoney() {
         addition_scroll(data);
     })
     addition_scroll(additiondata);
+}
+
+/**
+ * 人均消费
+ */
+function avgmoney() {
+    var additiondata = 0;
+    var socket = io.connect("localhost:9092");
+    socket.on("connect_msg_avgmoney",function (data) {
+        addition_scroll_avg(data);
+    })
+    addition_scroll_avg(additiondata);
 }
